@@ -607,22 +607,12 @@ height: 26px;
 left: 20px;
 right: 20px;
 top: 149px;
-
-/* Title/Title S */
-
 font-family: 'Baloo 2';
 font-style: normal;
 font-weight: 700;
 font-size: 20px;
 line-height: 130%;
-/* identical to box height, or 26px */
-
-display: flex;
-align-items: flex-end;
 text-align: center;
-
-/* Base/Subtitle */
-
 color: #403937;
 `;
 
