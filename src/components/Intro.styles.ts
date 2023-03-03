@@ -75,7 +75,7 @@ line-height: 130%;
 
 /* Base/Subtitle */
 
-color: #  403937;
+color: #403937;
 font-stretch: 100;
 
 
