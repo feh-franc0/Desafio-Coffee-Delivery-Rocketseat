@@ -1,7 +1,7 @@
 import { Actions, Cart, DivContainer, Location, LogoCoffee, TextLocation } from "./Navbar.styles";
-import LogoCoffeeIcon from "../../public/LogoCoffee.svg";
-import IconCartIcon from "../../public/IconCart.svg";
-import IconLocationIcon from "../../public/IconLocation.svg";
+import LogoCoffeeIcon from "../public/LogoCoffee.svg";
+import IconCartIcon from "../public/IconCart.svg";
+import IconLocationIcon from "../public/IconLocation.svg";
 
 export function Navbar() {
   return (

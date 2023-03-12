@@ -1,8 +1,9 @@
 import { ContainerIntro, BackgroundContainer, TitleBlock, Title, Paragraph, ImageCoffee, Items, BlockImageItem1, Item1, Item2, Item3, Item4, BlockImageItem2, BlockImageItem3, BlockImageItem4, ParagraphItem } from "./Intro.styles";
-import imageItem1 from "../../public/item1.svg";
-import imageItem2 from "../../public/item2.svg";
-import imageItem3 from "../../public/item3.svg";
-import imageItem4 from "../../public/item4.svg";
+import imageItem1 from "../public/item1.svg";
+import imageItem2 from "../public/item2.svg";
+import imageItem3 from "../public/item3.svg";
+import imageItem4 from "../public/item4.svg";
+import ImgCoffee from "../public/ImageCoffee.svg";
 
 export function Intro () {
   return (
@@ -47,7 +48,9 @@ export function Intro () {
         
       </Items>
 
-      <ImageCoffee></ImageCoffee>
+      <ImageCoffee>
+        <img src={ImgCoffee} alt="" />
+      </ImageCoffee>
     </ContainerIntro>
   )
 }

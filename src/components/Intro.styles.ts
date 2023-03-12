@@ -93,8 +93,6 @@ export const ImageCoffee = styled.div`
   height: 360px;
   left: calc(50% - 476px/2 + 322px);
   top: calc(50% - 360px/2);
-
-  background: url("../../public/ImageCoffee.svg");
 `;
 
 export const Items = styled.div`

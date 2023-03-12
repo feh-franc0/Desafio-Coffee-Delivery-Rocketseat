@@ -308,12 +308,31 @@ order: 0;
 flex-grow: 0;
 `;
 
+export const GridListCoffeeItens = styled.div`
+
+  position: absolute;
+  width: 1120px;
+  height: 1360px;
+  left: calc(50% - 1120px/2);
+  top: 134px;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-gap: 10px;
+`;
+
 export const ListCoffeeItens = styled.div`
 position: absolute;
 width: 1120px;
 height: 1360px;
 left: calc(50% - 1120px/2);
 top: 134px;
+
+
+  /* display: grid;
+  grid-template-columns: repeat(4, 25%);
+  grid-auto-rows: 100px; */
 `;
 
 export const CoffeeImg = styled.div`
@@ -331,6 +350,22 @@ left: calc(50% - 81px/2);
 top: 25px;
 `;
 
+export const CoffeeImgTest = styled.div`
+position: relative;
+top: -10%;
+
+/* display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 0px;
+gap: 4px;
+
+height: 25px; */
+/* left: calc(50% - 81px/2); */
+/* top: 25px; */
+`;
+
 export const TagsCard = styled.div`
 display: flex;
 flex-direction: row;
@@ -344,6 +379,27 @@ width: 81px;
 height: 21px;
 left: calc(50% - 81px/2);
 top: 112px;
+`;
+
+export const TagsCardTest = styled.div`
+position: relative;
+top: -5%;
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: center;
+
+/* display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 0px;
+
+height: 0px;
+margin-top: 75px;
+margin-bottom: 25px;
+left: calc(50% - 81px/2);
+top: 112px; */
 `;
 
 export const TagsCardTwo = styled.div`
@@ -616,6 +672,21 @@ text-align: center;
 color: #403937;
 `;
 
+export const NameCardTest = styled.div`
+/* position: absolute; */
+/* height: 26px; */
+left: 20px;
+right: 20px;
+top: 149px;
+font-family: 'Baloo 2';
+font-style: normal;
+font-weight: 700;
+font-size: 20px;
+line-height: 130%;
+text-align: center;
+color: #403937;
+`;
+
 export const CoffeeCard1 = styled.div`
 position: absolute;
 width: 256px;
@@ -628,6 +699,18 @@ top: 0px;
 background: #F3F2F2;
 border-radius: 6px 36px;
 `;
+
+export const CoffeeIten = styled.div`
+  box-sizing: border-box;
+  /* border: 3px solid blue; */
+  height: 310px;
+  width: 260px;
+  padding: 0px;
+  text-align: center;
+  background: #F3F2F2;
+  border-radius: 6px 36px;
+`;
+
 export const CoffeeCard2 = styled.div`
 position: absolute;
 width: 256px;
@@ -803,8 +886,48 @@ right: 30px;
 bottom: 20px;
 `;
 
+export const BuyTest = styled.div`
+/* box-sizing: border-box; */
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+align-items: center;
+/* padding: 0px; */
+position: relative;
+
+top: 10%;
+left: 5%;
+gap: 15px;
+
+/* position: absolute; */
+/* height: 38px; */
+`;
+
 export const DescriptionCard = styled.div`
 position: absolute;
+height: 36px;
+left: 20px;
+right: 20px;
+top: 183px;
+
+/* Text/Regular S */
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 130%;
+/* or 18px */
+
+text-align: center;
+
+/* Base/Label */
+
+color: #8D8686;
+`;
+
+export const DescriptionCardTest = styled.div`
+/* position: absolute; */
 height: 36px;
 left: 20px;
 right: 20px;
@@ -852,6 +975,32 @@ order: 0;
 flex-grow: 0;
 `;
 
+export const TextPriceBuyTest = styled.span`
+
+width: auto;
+height: 31px;
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 800;
+font-size: 20px;
+line-height: 130%;
+/* or 18px */
+
+text-align: right;
+
+/* Base/Text */
+
+color: #574F4D;
+
+
+/* Inside auto layout */
+
+flex: none;
+order: 0;
+flex-grow: 0;
+`;
+
 export const ActionsBuy = styled.div`
 display: flex;
 flex-direction: row;
@@ -864,6 +1013,21 @@ height: 38px;
 
 
 /* Inside auto layout */
+
+flex: none;
+order: 1;
+flex-grow: 0;
+`;
+
+export const ActionsBuyTest = styled.div`
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 0px;
+gap: 8px;
+
+width: 170px;
+
 
 flex: none;
 order: 1;
