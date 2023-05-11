@@ -1,13 +1,10 @@
-import { CoffeeList } from "./components/CoffeeList";
-import { Navbar } from "./components/Navbar";
-import { Intro } from "./components/Intro";
+import { Router } from "./Router";
+import { BrowserRouter } from "react-router-dom";
 
 export function App() {
   return (
-    <>
-      <Navbar />
-      <Intro />
-      <CoffeeList />
-    </>
-  )
+    <BrowserRouter>
+      <Router />
+    </BrowserRouter>
+  );
 }

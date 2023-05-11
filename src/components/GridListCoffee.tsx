@@ -19,6 +19,9 @@ import { CoffeeItem } from "./CoffeeItem";
 
 export function GridListCoffee () {
 
+  console.log(ExpressoTradicional)
+
+
   return (
     
       <GridListCoffeeItens>
