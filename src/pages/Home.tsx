@@ -5,10 +5,9 @@ import { Navbar } from "../components/Navbar";
 export function Home() {
   return (
     <>
-      <h1>Home</h1>
       <Navbar />
       <Intro />
-      <CoffeeList />
+      <CoffeeList/>
     </>
   );
 }
