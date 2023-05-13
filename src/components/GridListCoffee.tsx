@@ -1,19 +1,19 @@
 import { GridListCoffeeItens } from "./CoffeeList.styles";
 
-import ExpressoTradicional from "../public/ExpressoTradicional.png";
-import CafecomLeite from "../public/CafecomLeite.png";
-import Mocaccino from "../public/Mocaccino.png";
-import Arabe from "../public/Arabe.png";
-import ExpressoAmericano from "../public/ExpressoAmericano.png";
-import Latte from "../public/Latte.png";
-import ChocolateQuente from "../public/ChocolateQuente.png";
-import Irlandes from "../public/Irlandes.png";
-import ExpressoCremoso from "../public/ExpressoCremoso.png";
-import Capuccino from "../public/Capuccino.png";
-import Cubano from "../public/Cubano.png";
-import ExpressoGelado from "../public/ExpressoGelado.png";
-import Macchiato from "../public/Macchiato.png";
-import Havaiano from "../public/Havaiano.png";
+// import ExpressoTradicional from "../public/ExpressoTradicional.png";
+// import CafecomLeite from "../public/CafecomLeite.png";
+// import Mocaccino from "../public/Mocaccino.png";
+// import Arabe from "../public/Arabe.png";
+// import ExpressoAmericano from "../public/ExpressoAmericano.png";
+// import Latte from "../public/Latte.png";
+// import ChocolateQuente from "../public/ChocolateQuente.png";
+// import Irlandes from "../public/Irlandes.png";
+// import ExpressoCremoso from "../public/ExpressoCremoso.png";
+// import Capuccino from "../public/Capuccino.png";
+// import Cubano from "../public/Cubano.png";
+// import ExpressoGelado from "../public/ExpressoGelado.png";
+// import Macchiato from "../public/Macchiato.png";
+// import Havaiano from "../public/Havaiano.png";
 import { CoffeeItem } from "./CoffeeItem";
 
 export function GridListCoffee() {

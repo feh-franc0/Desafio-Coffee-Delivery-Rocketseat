@@ -1,4 +1,4 @@
-import { CoffeeCard1, CoffeeCard2, CoffeeCard3, CoffeeCard4, CoffeeCard5, CoffeeCard6, CoffeeCard7, CoffeeCard8, CoffeeCard9, CoffeeCard10, CoffeeCard11, CoffeeCard12, CoffeeCard13, CoffeeCard14, ContainerCoffeeList, FilterCoffeeList, ListCoffeeItens, Tag1, Tag2, Tag3, Tag4, Tag5, TitleCoffeeList, TitleTag1, TitleTag2, TitleTag3, TitleTag4, TitleTag5, Buy, TextPriceBuy, ActionsBuy, CounterBuy, IconButtonBuy, TextNumberCount, DescriptionCard, NameCard, TagsCard, TagOne, TagDescTradicional, CoffeeImg, TagTwo, TagsCardTwo, TagDescTradicionalTwo, TagDescTradicionalThree, TagThree, TagEspecial, TagDescTradicionalEspecial, TagTwoAlcoolico, TagThreeGelado, GridListCoffeeItens, CoffeeIten, CoffeeImgTest, TagsCardTest, NameCardTest, DescriptionCardTest, BuyTest, TextPriceBuyTest, ActionsBuyTest } from "./CoffeeList.styles";
+import { CounterBuy, IconButtonBuy, TextNumberCount, TagOne, TagDescTradicional,CoffeeIten, CoffeeImgTest, TagsCardTest, NameCardTest, DescriptionCardTest, BuyTest, TextPriceBuyTest, ActionsBuyTest } from "./CoffeeList.styles";
 
 import Vector from "../public/Vector.svg";
 import iconMenos from "../public/iconMenos.svg";
@@ -18,6 +18,8 @@ import Cubano from "../public/Cubano.png";
 import ExpressoGelado from "../public/ExpressoGelado.png";
 import Macchiato from "../public/Macchiato.png";
 import Havaiano from "../public/Havaiano.png";
+import { useContext } from "react";
+import { ShopCartContext } from "../contexts/ShopCartContext";
 // import { CoffeeItem } from "./CoffeeItem";
 
 interface PropsCoffee  {
@@ -29,6 +31,8 @@ interface PropsCoffee  {
 }
 
 export function CoffeeItem(props:PropsCoffee) {
+  const {shopCart, setShopCart}: any = useContext(ShopCartContext)
+
   return (
     // <p>ola</p>
 

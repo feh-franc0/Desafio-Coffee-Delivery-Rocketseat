@@ -1,4 +1,11 @@
-import { Actions, Cart, DivContainer, Location, LogoCoffee, TextLocation } from "./Navbar.styles";
+import {
+  Actions,
+  Cart,
+  DivContainer,
+  Location,
+  LogoCoffee,
+  TextLocation,
+} from "./Navbar.styles";
 import LogoCoffeeIcon from "../public/LogoCoffee.svg";
 import IconCartIcon from "../public/IconCart.svg";
 import IconLocationIcon from "../public/IconLocation.svg";
@@ -16,8 +23,9 @@ export function Navbar() {
         </Location>
         <Cart>
           <img src={IconCartIcon} alt="" />
+          <span className="cart-count">0</span>
         </Cart>
       </Actions>
     </DivContainer>
-  )
+  );
 }

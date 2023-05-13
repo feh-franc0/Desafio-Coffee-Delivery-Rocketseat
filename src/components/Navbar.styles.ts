@@ -17,6 +17,9 @@ export const DivContainer = styled.div`
   /* Base/Background */
 
   background: #FAFAFA;
+  
+  box-sizing: border-box;
+  height: 100px;
 `;
 
 export const LogoCoffee = styled.div`
@@ -83,6 +86,7 @@ export const Cart = styled.div`
   align-items: center;
   padding: 8px;
   gap: 4px;
+  position: relative;
 
   width: 38px;
   height: 38px;
@@ -97,6 +101,21 @@ export const Cart = styled.div`
   flex: none;
   order: 1;
   flex-grow: 0;
+
+  .cart-count {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: #C47F17;
+    color: #ffffff;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 `;
 
 export const TextLocation = styled.p`
