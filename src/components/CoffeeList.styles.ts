@@ -1057,15 +1057,16 @@ order: 0;
 flex-grow: 0;
 `;
 
-export const IconButtonBuy = styled.div`
+export const IconButtonBuy = styled.button`
 display: flex;
 flex-direction: row;
 justify-content: center;
 align-items: center;
-padding: 8px;
+padding: 26.5px;
 gap: 8px;
 
 width: 38px;
+border: 0;
 height: 38px;
 
 /* Brand/Purple Dark */
@@ -1078,6 +1079,10 @@ border-radius: 6px;
 flex: none;
 order: 1;
 flex-grow: 0;
+&:hover {
+  cursor: pointer;
+}
+
 `;
 
 export const TextNumberCount = styled.div`

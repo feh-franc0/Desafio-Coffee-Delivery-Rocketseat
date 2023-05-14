@@ -147,6 +147,7 @@ export function GridListCoffee() {
       {listCoffee.map((list: any) => (
         <CoffeeItem
           key={list.id}
+          CoffeeId={list.id}
           CoffeeImage={list.CoffeeImage}
           CoffeeType={list.CoffeeType}
           CoffeeTitle={list.CoffeeTitle}

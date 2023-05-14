@@ -18,11 +18,12 @@ import Cubano from "../public/Cubano.png";
 import ExpressoGelado from "../public/ExpressoGelado.png";
 import Macchiato from "../public/Macchiato.png";
 import Havaiano from "../public/Havaiano.png";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { ShopCartContext } from "../contexts/ShopCartContext";
 // import { CoffeeItem } from "./CoffeeItem";
 
 interface PropsCoffee  {
+  CoffeeId: string
   CoffeeImage: string
   CoffeeType: string
   CoffeeTitle: string
@@ -33,10 +34,13 @@ interface PropsCoffee  {
 export function CoffeeItem(props:PropsCoffee) {
   const {shopCart, setShopCart}: any = useContext(ShopCartContext)
 
-  return (
-    // <p>ola</p>
+  const handleClick = (event: any) => {
+    event.preventDefault();
+    const idItem = event.target.id ? event.target.id : event.target.parentNode.id
+    console.log(idItem)
+  };
 
-    
+  return (
   <CoffeeIten>
   <CoffeeImgTest>
     <img src={props.CoffeeImage} alt="" />
@@ -60,7 +64,7 @@ export function CoffeeItem(props:PropsCoffee) {
         <TextNumberCount> 1 </TextNumberCount>
         <div> <img src={iconeMais} alt="" /> </div>
       </CounterBuy>
-      <IconButtonBuy>
+      <IconButtonBuy onClick={handleClick} id={props.CoffeeId}>
         <img src={Vector} alt="" />
       </IconButtonBuy>
     </ActionsBuyTest>
