@@ -26,6 +26,7 @@ export function GridListCoffee() {
       CoffeeDescription:
         "O tradicional café feito com água quente e grãos moídos",
       CoffeePrice: "9,90",
+      CoffeAmout: 1,
     },
     {
       id: "2",
@@ -34,6 +35,7 @@ export function GridListCoffee() {
       CoffeeTitle: "Expresso Americano",
       CoffeeDescription: "Expresso diluído, menos intenso que o tradicional",
       CoffeePrice: "9,90",
+      CoffeAmout: 1,
     },
     {
       id: "3",
@@ -42,6 +44,7 @@ export function GridListCoffee() {
       CoffeeTitle: "Expresso Cremoso",
       CoffeeDescription: "Café expresso tradicional com espuma cremosa",
       CoffeePrice: "9,90",
+      CoffeAmout: 1,
     },
     {
       id: "4",
@@ -50,6 +53,7 @@ export function GridListCoffee() {
       CoffeeTitle: "Expresso Gelado",
       CoffeeDescription: "Bebida preparada com café expresso e cubos de gelo",
       CoffeePrice: "9,90",
+      CoffeAmout: 1,
     },
     {
       id: "5",
@@ -59,6 +63,7 @@ export function GridListCoffee() {
       CoffeeDescription:
         "Meio a meio de expresso tradicional com leite vaporizado",
       CoffeePrice: "9,90",
+      CoffeAmout: 1,
     },
     {
       id: "6",
@@ -68,6 +73,7 @@ export function GridListCoffee() {
       CoffeeDescription:
         "Uma dose de café expresso com o dobro de leite e espuma cremosa",
       CoffeePrice: "9,90",
+      CoffeAmout: 1,
     },
     {
       id: "7",
@@ -77,6 +83,7 @@ export function GridListCoffee() {
       CoffeeDescription:
         "Bebida com canela feita de doses iguais de café, leite e espuma",
       CoffeePrice: "9,90",
+      CoffeAmout: 1,
     },
     {
       id: "8",
@@ -86,6 +93,7 @@ export function GridListCoffee() {
       CoffeeDescription:
         "Café expresso misturado com um pouco de leite quente e espuma",
       CoffeePrice: "9,90",
+      CoffeAmout: 1,
     },
     {
       id: "9",
@@ -95,6 +103,7 @@ export function GridListCoffee() {
       CoffeeDescription:
         "Café expresso com calda de chocolate, pouco leite e espuma",
       CoffeePrice: "9,90",
+      CoffeAmout: 1,
     },
     {
       id: "10",
@@ -104,6 +113,7 @@ export function GridListCoffee() {
       CoffeeDescription:
         "Bebida feita com chocolate dissolvido no leite quente e café",
       CoffeePrice: "9,90",
+      CoffeAmout: 1,
     },
     {
       id: "11",
@@ -113,6 +123,7 @@ export function GridListCoffee() {
       CoffeeDescription:
         "Drink gelado de café expresso com rum, creme de leite e hortelã",
       CoffeePrice: "9,90",
+      CoffeAmout: 1,
     },
     {
       id: "12",
@@ -121,6 +132,7 @@ export function GridListCoffee() {
       CoffeeTitle: "Havaiano",
       CoffeeDescription: "Bebida adocicada preparada com café e leite de coco",
       CoffeePrice: "9,90",
+      CoffeAmout: 1,
     },
     {
       id: "13",
@@ -130,6 +142,7 @@ export function GridListCoffee() {
       CoffeeDescription:
         "Bebida preparada com grãos de café árabe e especiarias",
       CoffeePrice: "9,90",
+      CoffeAmout: 1,
     },
     {
       id: "14",
@@ -139,6 +152,7 @@ export function GridListCoffee() {
       CoffeeDescription:
         "Bebida a base de café, uísque irlandês, açúcar e chantilly",
       CoffeePrice: "9,90",
+      CoffeAmout: 1,
     },
   ];
 
@@ -153,6 +167,7 @@ export function GridListCoffee() {
           CoffeeTitle={list.CoffeeTitle}
           CoffeeDescription={list.CoffeeDescription}
           CoffeePrice={list.CoffeePrice}
+          CoffeAmout={list.CoffeAmout}
         />
       ))}
     </GridListCoffeeItens>

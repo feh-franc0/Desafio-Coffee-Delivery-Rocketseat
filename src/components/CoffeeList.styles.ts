@@ -1055,6 +1055,14 @@ border-radius: 6px;
 flex: none;
 order: 0;
 flex-grow: 0;
+
+button {
+  border: 0;
+  background: none;
+  &:hover {
+    cursor: pointer;
+  }
+}
 `;
 
 export const IconButtonBuy = styled.button`

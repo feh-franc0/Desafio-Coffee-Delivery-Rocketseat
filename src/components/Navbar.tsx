@@ -9,8 +9,14 @@ import {
 import LogoCoffeeIcon from "../public/LogoCoffee.svg";
 import IconCartIcon from "../public/IconCart.svg";
 import IconLocationIcon from "../public/IconLocation.svg";
+import { ShopCartContext } from "../contexts/ShopCartContext";
+import { useContext } from "react";
 
 export function Navbar() {
+  
+  const {shopCart, setShopCart}: any = useContext(ShopCartContext)
+  console.log(shopCart.length)
+
   return (
     <DivContainer>
       <LogoCoffee>
@@ -23,7 +29,7 @@ export function Navbar() {
         </Location>
         <Cart>
           <img src={IconCartIcon} alt="" />
-          <span className="cart-count">0</span>
+          <span className="cart-count">{shopCart.length}</span>
         </Cart>
       </Actions>
     </DivContainer>
