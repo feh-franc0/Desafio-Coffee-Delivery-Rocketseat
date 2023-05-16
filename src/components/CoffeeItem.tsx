@@ -14,6 +14,10 @@ import {
   ActionsBuyTest,
 } from "./CoffeeList.styles";
 
+
+import { useContext, useState } from "react";
+import { ShopCartContext } from "../contexts/ShopCartContext";
+
 import Vector from "../public/Vector.svg";
 import iconMenos from "../public/iconMenos.svg";
 import iconeMais from "../public/iconeMais.svg";
@@ -32,8 +36,6 @@ import Cubano from "../public/Cubano.png";
 import ExpressoGelado from "../public/ExpressoGelado.png";
 import Macchiato from "../public/Macchiato.png";
 import Havaiano from "../public/Havaiano.png";
-import { useContext, useState } from "react";
-import { ShopCartContext } from "../contexts/ShopCartContext";
 // import { CoffeeItem } from "./CoffeeItem";
 
 interface PropsCoffee {

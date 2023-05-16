@@ -1,23 +1,42 @@
 import { GridListCoffeeItens } from "./CoffeeList.styles";
 
-// import ExpressoTradicional from "../public/ExpressoTradicional.png";
-// import CafecomLeite from "../public/CafecomLeite.png";
-// import Mocaccino from "../public/Mocaccino.png";
-// import Arabe from "../public/Arabe.png";
-// import ExpressoAmericano from "../public/ExpressoAmericano.png";
-// import Latte from "../public/Latte.png";
-// import ChocolateQuente from "../public/ChocolateQuente.png";
-// import Irlandes from "../public/Irlandes.png";
-// import ExpressoCremoso from "../public/ExpressoCremoso.png";
-// import Capuccino from "../public/Capuccino.png";
-// import Cubano from "../public/Cubano.png";
-// import ExpressoGelado from "../public/ExpressoGelado.png";
-// import Macchiato from "../public/Macchiato.png";
-// import Havaiano from "../public/Havaiano.png";
+import { useContext, useState } from "react";
+import { ShopCartContext } from "../contexts/ShopCartContext";
+
+import Vector from "../public/Vector.svg";
+import iconMenos from "../public/iconMenos.svg";
+import iconeMais from "../public/iconeMais.svg";
 import { CoffeeItem } from "./CoffeeItem";
 
+import {
+  CounterBuy,
+  IconButtonBuy,
+  TextNumberCount,
+  TagOne,
+  TagDescTradicional,
+  CoffeeIten,
+  CoffeeImgTest,
+  TagsCardTest,
+  NameCardTest,
+  DescriptionCardTest,
+  BuyTest,
+  TextPriceBuyTest,
+  ActionsBuyTest,
+} from "./CoffeeList.styles";
+
+interface PropsCoffee {
+  id: string;
+  CoffeeImage: string;
+  CoffeeType: string;
+  CoffeeTitle: string;
+  CoffeeDescription: string;
+  CoffeePrice: string;
+  CoffeAmout: number;
+}
+
 export function GridListCoffee() {
-  const listCoffee = [
+  const { shopCart, setShopCart }: any = useContext(ShopCartContext);
+  const [listCoffee, setListCoffee] = useState<PropsCoffee[]>([
     {
       id: "1",
       CoffeeImage: "./src/public/ExpressoTradicional.png",
@@ -25,8 +44,8 @@ export function GridListCoffee() {
       CoffeeTitle: "Expresso   Tradicional",
       CoffeeDescription:
         "O tradicional café feito com água quente e grãos moídos",
-      CoffeePrice: "9,90",
-      CoffeAmout: 1,
+      CoffeePrice: "13,20",
+      CoffeAmout: 0,
     },
     {
       id: "2",
@@ -34,8 +53,8 @@ export function GridListCoffee() {
       CoffeeType: "Tradicional",
       CoffeeTitle: "Expresso Americano",
       CoffeeDescription: "Expresso diluído, menos intenso que o tradicional",
-      CoffeePrice: "9,90",
-      CoffeAmout: 1,
+      CoffeePrice: "18,50",
+      CoffeAmout: 0,
     },
     {
       id: "3",
@@ -43,8 +62,8 @@ export function GridListCoffee() {
       CoffeeType: "Tradicional",
       CoffeeTitle: "Expresso Cremoso",
       CoffeeDescription: "Café expresso tradicional com espuma cremosa",
-      CoffeePrice: "9,90",
-      CoffeAmout: 1,
+      CoffeePrice: "7,32",
+      CoffeAmout: 0,
     },
     {
       id: "4",
@@ -52,8 +71,8 @@ export function GridListCoffee() {
       CoffeeType: "Tradicional, gelado",
       CoffeeTitle: "Expresso Gelado",
       CoffeeDescription: "Bebida preparada com café expresso e cubos de gelo",
-      CoffeePrice: "9,90",
-      CoffeAmout: 1,
+      CoffeePrice: "7,98",
+      CoffeAmout: 0,
     },
     {
       id: "5",
@@ -62,8 +81,8 @@ export function GridListCoffee() {
       CoffeeTitle: "Café com Leite",
       CoffeeDescription:
         "Meio a meio de expresso tradicional com leite vaporizado",
-      CoffeePrice: "9,90",
-      CoffeAmout: 1,
+      CoffeePrice: "21,23",
+      CoffeAmout: 0,
     },
     {
       id: "6",
@@ -72,8 +91,8 @@ export function GridListCoffee() {
       CoffeeTitle: "Latte",
       CoffeeDescription:
         "Uma dose de café expresso com o dobro de leite e espuma cremosa",
-      CoffeePrice: "9,90",
-      CoffeAmout: 1,
+      CoffeePrice: "10,92",
+      CoffeAmout: 0,
     },
     {
       id: "7",
@@ -82,8 +101,8 @@ export function GridListCoffee() {
       CoffeeTitle: "Capuccino",
       CoffeeDescription:
         "Bebida com canela feita de doses iguais de café, leite e espuma",
-      CoffeePrice: "9,90",
-      CoffeAmout: 1,
+      CoffeePrice: "11,21",
+      CoffeAmout: 0,
     },
     {
       id: "8",
@@ -92,8 +111,8 @@ export function GridListCoffee() {
       CoffeeTitle: "Macchiato",
       CoffeeDescription:
         "Café expresso misturado com um pouco de leite quente e espuma",
-      CoffeePrice: "9,90",
-      CoffeAmout: 1,
+      CoffeePrice: "25,90",
+      CoffeAmout: 0,
     },
     {
       id: "9",
@@ -102,8 +121,8 @@ export function GridListCoffee() {
       CoffeeTitle: "Mocaccino",
       CoffeeDescription:
         "Café expresso com calda de chocolate, pouco leite e espuma",
-      CoffeePrice: "9,90",
-      CoffeAmout: 1,
+      CoffeePrice: "21,30",
+      CoffeAmout: 0,
     },
     {
       id: "10",
@@ -112,8 +131,8 @@ export function GridListCoffee() {
       CoffeeTitle: "Chocolate Quente",
       CoffeeDescription:
         "Bebida feita com chocolate dissolvido no leite quente e café",
-      CoffeePrice: "9,90",
-      CoffeAmout: 1,
+      CoffeePrice: "11,32",
+      CoffeAmout: 0,
     },
     {
       id: "11",
@@ -122,8 +141,8 @@ export function GridListCoffee() {
       CoffeeTitle: "Cubano",
       CoffeeDescription:
         "Drink gelado de café expresso com rum, creme de leite e hortelã",
-      CoffeePrice: "9,90",
-      CoffeAmout: 1,
+      CoffeePrice: "31,21",
+      CoffeAmout: 0,
     },
     {
       id: "12",
@@ -131,8 +150,8 @@ export function GridListCoffee() {
       CoffeeType: "especial",
       CoffeeTitle: "Havaiano",
       CoffeeDescription: "Bebida adocicada preparada com café e leite de coco",
-      CoffeePrice: "9,90",
-      CoffeAmout: 1,
+      CoffeePrice: "12,20",
+      CoffeAmout: 0,
     },
     {
       id: "13",
@@ -141,8 +160,8 @@ export function GridListCoffee() {
       CoffeeTitle: "Árabe",
       CoffeeDescription:
         "Bebida preparada com grãos de café árabe e especiarias",
-      CoffeePrice: "9,90",
-      CoffeAmout: 1,
+      CoffeePrice: "3,90",
+      CoffeAmout: 0,
     },
     {
       id: "14",
@@ -151,24 +170,97 @@ export function GridListCoffee() {
       CoffeeTitle: "Irlandês",
       CoffeeDescription:
         "Bebida a base de café, uísque irlandês, açúcar e chantilly",
-      CoffeePrice: "9,90",
-      CoffeAmout: 1,
+      CoffeePrice: "19,90",
+      CoffeAmout: 0,
     },
-  ];
+  ]);
+  console.log("shopCart: ", shopCart);
+
+  const handleClick = (id: string) => {
+    // console.log("clicou no btn -> enviar", id);
+    const index = listCoffee.findIndex((objeto) => objeto.id === id);
+    const novoArray = [...listCoffee];
+    const objCart = novoArray[index];
+
+    const existingItem = shopCart.find((item: any) => item.id === objCart.id);
+    if (existingItem) {
+      setShopCart((prevCart: any) =>
+        prevCart.map((item: any) => {
+          if (item.id === objCart.id) {
+            return {
+              ...item,
+              CoffeAmout: objCart.CoffeAmout,
+              // CoffeAmout: item.CoffeAmout + objCart.CoffeAmout,
+            };
+          }
+          return item;
+        })
+      );
+    } else {
+      setShopCart((prevCart: any) => [...prevCart, objCart]);
+    }
+  };
+
+  const addCart = (id: string) => {
+    const index = listCoffee.findIndex((objeto) => objeto.id === id);
+    if (index !== -1) {
+      const novoArray = [...listCoffee];
+      novoArray[index].CoffeAmout++;
+      setListCoffee(novoArray);
+    }
+  };
+
+  const subtractCart = (id: string) => {
+    const index = listCoffee.findIndex((objeto) => objeto.id === id);
+    if (index !== -1) {
+      const novoArray = [...listCoffee];
+      novoArray[index].CoffeAmout--;
+      setListCoffee(novoArray);
+    }
+  };
 
   return (
     <GridListCoffeeItens>
-      {listCoffee.map((list: any) => (
-        <CoffeeItem
-          key={list.id}
-          CoffeeId={list.id}
-          CoffeeImage={list.CoffeeImage}
-          CoffeeType={list.CoffeeType}
-          CoffeeTitle={list.CoffeeTitle}
-          CoffeeDescription={list.CoffeeDescription}
-          CoffeePrice={list.CoffeePrice}
-          CoffeAmout={list.CoffeAmout}
-        />
+      {listCoffee.map((props: any) => (
+        <CoffeeIten key={props.id}>
+          <CoffeeImgTest>
+            <img src={props.CoffeeImage} alt="" />
+          </CoffeeImgTest>
+          <TagsCardTest>
+            <TagOne>
+              <TagDescTradicional>{props.CoffeeType}</TagDescTradicional>
+            </TagOne>
+          </TagsCardTest>
+          <NameCardTest>{props.CoffeeTitle}</NameCardTest>
+          <DescriptionCardTest>{props.CoffeeDescription}</DescriptionCardTest>
+          <BuyTest id={props.id}>
+            <TextPriceBuyTest>R$ {props.CoffeePrice}</TextPriceBuyTest>
+            <ActionsBuyTest>
+              <CounterBuy>
+                <button onClick={() => subtractCart(props.id)}>
+                  <img src={iconMenos} alt="" />
+                </button>
+                <TextNumberCount> {props.CoffeAmout} </TextNumberCount>
+                <button onClick={() => addCart(props.id)}>
+                  <img src={iconeMais} alt="" />
+                </button>
+              </CounterBuy>
+              <IconButtonBuy onClick={() => handleClick(props.id)}>
+                <img src={Vector} alt="" />
+              </IconButtonBuy>
+            </ActionsBuyTest>
+          </BuyTest>
+        </CoffeeIten>
+        // <CoffeeItem
+        //   key={list.id}
+        //   CoffeeId={list.id}
+        //   CoffeeImage={list.CoffeeImage}
+        //   CoffeeType={list.CoffeeType}
+        //   CoffeeTitle={list.CoffeeTitle}
+        //   CoffeeDescription={list.CoffeeDescription}
+        //   CoffeePrice={list.CoffeePrice}
+        //   CoffeAmout={list.CoffeAmout}
+        // />
       ))}
     </GridListCoffeeItens>
   );
