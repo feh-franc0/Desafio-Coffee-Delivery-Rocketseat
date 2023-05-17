@@ -34,14 +34,18 @@ export function CheckoutContainer() {
             <p>Informe o endereço onde deseja receber seu pedido</p>
           </div>
 
-          <div>
-            <input type="text" placeholder="digite algo..." />
-            <input type="text" placeholder="digite algo..." />
-            <input type="text" placeholder="digite algo..." />
-            <input type="text" placeholder="digite algo..." />
-            <input type="text" placeholder="digite algo..." />
-            <input type="text" placeholder="digite algo..." />
-            <input type="text" placeholder="digite algo..." />
+          <div className="personalInfos">
+            <input className="CEP" type="text" placeholder="CEP" />
+            <input className="Rua" type="text" placeholder="Rua" />
+            <div className="infosNumComp">
+              <input className="Numero" type="text" placeholder="Número" />
+              <input className="Complemento" type="text" placeholder="Complemento" />
+            </div>
+            <div className="infosBaiCidUf">
+              <input className="Bairro" type="text" placeholder="Bairro" />
+              <input className="Cidade" type="text" placeholder="Cidade" />
+              <input className="UF" type="text" placeholder="UF" />
+            </div>
           </div>
         </ContainerLeftForm>
         <ContainerPayment>

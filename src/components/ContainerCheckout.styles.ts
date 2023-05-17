@@ -70,6 +70,264 @@ export const ContainerLeftForm = styled.div`
       line-height: 130%;
     }
   }
+  .personalInfos {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    padding-top: 32px;
+    gap: 16px;
+
+    width: 560px;
+    height: 216px;
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 0;
+
+    .CEP {
+      box-sizing: border-box;
+
+      /* Auto layout */
+
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 12px;
+      gap: 4px;
+
+      width: 200px;
+      height: 42px;
+
+      /* Base/Input */
+
+      background: #eeeded;
+      /* Base/Button */
+
+      border: 1px solid #e6e5e5;
+      border-radius: 4px;
+
+      /* Inside auto layout */
+
+      flex: none;
+      order: 0;
+      flex-grow: 0;
+    }
+
+    .Rua {
+      box-sizing: border-box;
+
+      /* Auto layout */
+
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 12px;
+      gap: 4px;
+
+      width: 560px;
+      height: 42px;
+
+      /* Base/Input */
+
+      background: #eeeded;
+      /* Base/Button */
+
+      border: 1px solid #e6e5e5;
+      border-radius: 4px;
+
+      /* Inside auto layout */
+
+      flex: none;
+      order: 1;
+      align-self: stretch;
+      flex-grow: 0;
+    }
+
+    .infosNumComp {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 0px;
+      gap: 12px;
+
+      width: 560px;
+      height: 42px;
+
+      /* Inside auto layout */
+
+      flex: none;
+      order: 2;
+      align-self: stretch;
+      flex-grow: 0;
+
+      .Numero {
+        box-sizing: border-box;
+
+        /* Auto layout */
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 12px;
+        gap: 4px;
+
+        width: 200px;
+        height: 42px;
+
+        /* Base/Input */
+
+        background: #eeeded;
+        /* Base/Button */
+
+        border: 1px solid #e6e5e5;
+        border-radius: 4px;
+
+        /* Inside auto layout */
+
+        flex: none;
+        order: 0;
+        flex-grow: 0;
+      }
+
+      .Complemento {
+        box-sizing: border-box;
+
+        /* Auto layout */
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 12px;
+        gap: 4px;
+
+        width: 348px;
+        height: 42px;
+
+        /* Base/Input */
+
+        background: #eeeded;
+        /* Base/Button */
+
+        border: 1px solid #e6e5e5;
+        border-radius: 4px;
+
+        /* Inside auto layout */
+
+        flex: none;
+        order: 1;
+        flex-grow: 1;
+      }
+    }
+
+    .infosBaiCidUf {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 0px;
+      gap: 12px;
+
+      width: 560px;
+      height: 42px;
+
+      /* Inside auto layout */
+
+      flex: none;
+      order: 3;
+      align-self: stretch;
+      flex-grow: 0;
+
+      .Bairro {
+        box-sizing: border-box;
+
+        /* Auto layout */
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 12px;
+        gap: 4px;
+
+        width: 200px;
+        height: 42px;
+
+        /* Base/Input */
+
+        background: #eeeded;
+        /* Base/Button */
+
+        border: 1px solid #e6e5e5;
+        border-radius: 4px;
+
+        /* Inside auto layout */
+
+        flex: none;
+        order: 0;
+        flex-grow: 0;
+      }
+
+      .Cidade {
+        box-sizing: border-box;
+
+        /* Auto layout */
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 12px;
+        gap: 4px;
+
+        width: 276px;
+        height: 42px;
+
+        /* Base/Input */
+
+        background: #eeeded;
+        /* Base/Button */
+
+        border: 1px solid #e6e5e5;
+        border-radius: 4px;
+
+        /* Inside auto layout */
+
+        flex: none;
+        order: 1;
+        flex-grow: 1;
+      }
+
+      .UF {
+        box-sizing: border-box;
+
+        /* Auto layout */
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 12px;
+        gap: 4px;
+
+        width: 60px;
+        height: 42px;
+
+        /* Base/Input */
+
+        background: #eeeded;
+        /* Base/Button */
+
+        border: 1px solid #e6e5e5;
+        border-radius: 4px;
+
+        /* Inside auto layout */
+
+        flex: none;
+        order: 2;
+        flex-grow: 0;
+      }
+    }
+  }
 `;
 
 export const ContainerPayment = styled.div`
