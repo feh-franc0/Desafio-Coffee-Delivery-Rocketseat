@@ -39,7 +39,11 @@ export function CheckoutContainer() {
             <input className="Rua" type="text" placeholder="Rua" />
             <div className="infosNumComp">
               <input className="Numero" type="text" placeholder="Número" />
-              <input className="Complemento" type="text" placeholder="Complemento" />
+              <input
+                className="Complemento"
+                type="text"
+                placeholder="Complemento"
+              />
             </div>
             <div className="infosBaiCidUf">
               <input className="Bairro" type="text" placeholder="Bairro" />
@@ -76,40 +80,41 @@ export function CheckoutContainer() {
           </div>
         </ContainerPayment>
       </CheckoutLeft>
-      //? Componente ao lado
       <CheckoutRight>
         <h1>Cafés selecionados</h1>
         <ContainerRightCountCoffe>
-          <div>
-            <div>
-              <img src={imageCoffe} alt="" />
-            </div>
-            <div>
-              <p>Expresso Tradicional</p>
-              <div>
-                <div>
-                  <button>
-                    <img src={iconMenos} alt="" />
-                  </button>
-                  <p> 2 </p>
-                  <button>
-                    <img src={iconeMais} alt="" />
-                  </button>
-                </div>
-                <div>
-                  <button>
+          <div className="coffeeItens">
+            <div className="infoItenCoffee">
+              <div className="imgItenCoffee">
+                <img src={imageCoffe} alt="" />
+              </div>
+              <div className="detailsItenCoffee">
+                <p>Latte</p>
+                <div className="actionsItenCoffe">
+
+                  <div className="counterItensCoffee">
+                    <button>
+                      <img src={iconMenos} alt="" />
+                    </button>
+                    <div> 10 </div>
+                    <button>
+                      <img src={iconeMais} alt="" />
+                    </button>
+                  </div>
+
+                  <button className="buttonRemoveItenCoffee">
                     <img src={trash} alt="" />
                     Remover
                   </button>
+                  
                 </div>
               </div>
             </div>
-            <div>
-              <p>R$ 20,00</p>
-            </div>
+            <p>R$ 9,90</p>
           </div>
+
           <hr />
-          <div>
+          <div className="priceSummary">
             <div>
               <p>Total de itens</p>
               <p>R$ 29,70</p>
@@ -118,12 +123,14 @@ export function CheckoutContainer() {
               <p>Entrega</p>
               <p>R$ 3,50</p>
             </div>
-            <div>
+            <div className="totalPrice">
               <p>Total</p>
               <p>R$ 33,20</p>
             </div>
           </div>
-          <button>Confirmar Pedido</button>
+          <button className="confirmPurchase">
+            <p>Confirmar Pedido</p>
+          </button>
         </ContainerRightCountCoffe>
       </CheckoutRight>
     </ContainerCheckout>

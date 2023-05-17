@@ -400,13 +400,273 @@ export const ContainerRightCountCoffe = styled.div`
   border-radius: 6px 44px;
   box-sizing: border-box;
   padding: 40px;
+  gap: 24px;
 
-  div {
+  .coffeeItens {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 8px 4px;
+    gap: 59px;
+
+    width: 368px;
+    height: 80px;
+
+    /* Base/Card */
+
+    background: #f3f2f2;
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 2;
+    align-self: stretch;
+    flex-grow: 0;
+
+    .infoItenCoffee {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 0px;
+      gap: 20px;
+
+      width: 255px;
+      height: 64px;
+
+      /* Inside auto layout */
+
+      flex: none;
+      order: 0;
+      flex-grow: 0;
+
+      .imgItenCoffee {
+        img {
+          width: 80px;
+          height: 80px;
+
+          /* Inside auto layout */
+
+          flex: none;
+          order: 0;
+          flex-grow: 0;
+        }
+      }
+
+      .detailsItenCoffee {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0px;
+        gap: 8px;
+
+        width: 171px;
+        height: 61px;
+
+        /* Inside auto layout */
+
+        flex: none;
+        order: 1;
+        flex-grow: 0;
+
+        p {
+          width: 37px;
+          height: 21px;
+
+          /* Text/Regular M */
+
+          font-family: "Roboto";
+          font-style: normal;
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 130%;
+          /* identical to box height, or 21px */
+
+          display: flex;
+          align-items: center;
+
+          /* Base/Subtitle */
+
+          color: #403937;
+
+          /* Inside auto layout */
+
+          flex: none;
+          order: 0;
+          flex-grow: 0;
+        }
+        .actionsItenCoffee {
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          padding: 8px;
+          gap: 4px;
+
+          width: 72px;
+          height: 32px;
+
+          /* Base/Button */
+
+          background: #e6e5e5;
+          border-radius: 6px;
+
+          /* Inside auto layout */
+
+          flex: none;
+          order: 0;
+          flex-grow: 0;
+
+          .counterItensCoffee {
+          }
+
+          .buttonRemoveItenCoffee {
+          }
+        }
+      }
+    }
+
+    p {
+      width: 55px;
+      height: 21px;
+
+      /* Text/Bold M */
+
+      font-family: "Roboto";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 130%;
+      /* identical to box height, or 21px */
+
+      display: flex;
+      align-items: center;
+      text-align: right;
+
+      /* Base/Text */
+
+      color: #574f4d;
+
+      /* Inside auto layout */
+
+      flex: none;
+      order: 1;
+      flex-grow: 0;
+    }
+  }
+
+  .priceSummary {
+    margin-top: 24px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
     padding: 0px;
     gap: 12px;
+
+    width: 100%;
+    height: 92px;
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 4;
+    align-self: stretch;
+    flex-grow: 0;
+
+    div {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0px;
+      gap: 8px;
+
+      width: 100%;
+      height: 21px;
+
+      /* Inside auto layout */
+
+      flex: none;
+      order: 0;
+      align-self: stretch;
+      flex-grow: 0;
+
+      p {
+        font-family: "Roboto";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 130%;
+      }
+    }
+
+    .totalPrice > p {
+      height: 26px;
+
+      /* Text/Bold L */
+
+      font-family: "Roboto";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 130%;
+      /* identical to box height, or 26px */
+
+      display: flex;
+      align-items: center;
+      text-align: right;
+
+      /* Base/Subtitle */
+
+      color: #403937;
+
+      /* Inside auto layout */
+
+      flex: none;
+      order: 0;
+      flex-grow: 0;
+    }
+  }
+
+  .confirmPurchase {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 8px;
+    gap: 4px;
+
+    width: 100%;
+    height: 46px;
+    margin-top: 24px;
+
+    /* Brand / Yellow */
+
+    background: #dbac2c;
+    border-radius: 6px;
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 5;
+    align-self: stretch;
+    flex-grow: 0;
+    border: none;
+    p {
+      font-family: "Roboto";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 160%;
+      /* or 22px */
+
+      text-transform: uppercase;
+
+      /* Base/White */
+
+      color: #ffffff;
+      font-stretch: 100;
+    }
   }
 `;
