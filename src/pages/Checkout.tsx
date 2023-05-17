@@ -1,3 +1,9 @@
+import { CheckoutContainer } from "../components/CheckoutContainer";
+
 export function Checkout() {
-  return <h1>Checkout</h1>
+  return (
+    <>
+      <CheckoutContainer />
+    </>
+  );
 }
