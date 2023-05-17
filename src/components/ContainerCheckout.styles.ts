@@ -2,21 +2,37 @@ import styled from "styled-components";
 
 export const ContainerCheckout = styled.div`
   width: 90%;
-  margin: 0 auto;
+  margin: 40px auto;
 `;
 
 export const CheckoutLeft = styled.div`
   float: left;
-  width: 50%;
+  width: 60%;
   box-sizing: border-box;
   padding: 40px;
+
+  h1 {
+    font-family: "Baloo 2";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 130%;
+  }
 `;
 
 export const CheckoutRight = styled.div`
   float: right;
-  width: 50%;
+  width: 40%;
   box-sizing: border-box;
   padding: 40px;
+
+  h1 {
+    font-family: "Baloo 2";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 130%;
+  }
 `;
 
 export const ContainerLeftForm = styled.div`
@@ -25,6 +41,8 @@ export const ContainerLeftForm = styled.div`
   background: #f3f2f2;
   border-radius: 6px;
   margin-bottom: 12px;
+  box-sizing: border-box;
+  padding: 40px;
 `;
 
 export const ContainerPayment = styled.div`
@@ -32,6 +50,8 @@ export const ContainerPayment = styled.div`
   height: 207px;
   background: #f3f2f2;
   border-radius: 6px;
+  box-sizing: border-box;
+  padding: 40px;
 `;
 
 export const ContainerRightCountCoffe = styled.div`
@@ -39,4 +59,16 @@ export const ContainerRightCountCoffe = styled.div`
   height: 498px;
   background: #f3f2f2;
   border-radius: 6px 44px;
+  box-sizing: border-box;
+  padding: 40px;
+
+  div {
+    
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: flex-start;
+padding: 0px;
+gap: 12px;
+  }
 `;

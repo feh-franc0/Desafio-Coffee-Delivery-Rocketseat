@@ -13,11 +13,13 @@ export const DivContainer = styled.div`
   left: 0px;
   right: 0px;
   top: 0px;
+  position: fixed;
+  z-index: 1;
 
   /* Base/Background */
 
-  background: #FAFAFA;
-  
+  background: #fafafad9;
+
   box-sizing: border-box;
   height: 100px;
 `;
@@ -48,7 +50,6 @@ export const Actions = styled.div`
   width: 193px;
   height: 38px;
 
-
   /* Inside auto layout */
 
   flex: none;
@@ -69,7 +70,7 @@ export const Location = styled.div`
 
   /* Brand/Purple Light */
 
-  background: #EBE5F9;
+  background: #ebe5f9;
   border-radius: 6px;
 
   /* Inside auto layout */
@@ -93,7 +94,7 @@ export const Cart = styled.div`
 
   /* Brand/Yellow Light */
 
-  background: #F1E9C9;
+  background: #f1e9c9;
   border-radius: 6px;
 
   /* Inside auto layout */
@@ -109,7 +110,7 @@ export const Cart = styled.div`
     width: 25px;
     height: 25px;
     border-radius: 50%;
-    background-color: #C47F17;
+    background-color: #c47f17;
     color: #ffffff;
     font-size: 0.9rem;
     display: flex;
@@ -124,18 +125,16 @@ export const TextLocation = styled.p`
 
   /* Text/Regular S */
 
-  font-family: 'Roboto';
+  font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
   line-height: 130%;
   /* or 18px */
 
-
   /* Brand/Purple Dark */
 
-  color: #4B2995;
-
+  color: #4b2995;
 
   /* Inside auto layout */
 
