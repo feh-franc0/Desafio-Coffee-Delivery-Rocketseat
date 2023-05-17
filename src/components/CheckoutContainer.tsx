@@ -26,23 +26,36 @@ export function CheckoutContainer() {
       <CheckoutLeft>
         <h1>Complete seu pedido</h1>
         <ContainerLeftForm>
-          <img src={location} alt="" />
-          <h3>Endereço de Entrega</h3>
-          <p>Informe o endereço onde deseja receber seu pedido</p>
-          <input type="text" placeholder="digite algo..." />
-          <input type="text" placeholder="digite algo..." />
-          <input type="text" placeholder="digite algo..." />
-          <input type="text" placeholder="digite algo..." />
-          <input type="text" placeholder="digite algo..." />
-          <input type="text" placeholder="digite algo..." />
-          <input type="text" placeholder="digite algo..." />
+          <div className="imgSideTitle">
+            <img src={location} alt="" />
+          </div>
+          <div className="titleAndDesc">
+            <h3>Endereço de Entrega</h3>
+            <p>Informe o endereço onde deseja receber seu pedido</p>
+          </div>
+
+          <div>
+            <input type="text" placeholder="digite algo..." />
+            <input type="text" placeholder="digite algo..." />
+            <input type="text" placeholder="digite algo..." />
+            <input type="text" placeholder="digite algo..." />
+            <input type="text" placeholder="digite algo..." />
+            <input type="text" placeholder="digite algo..." />
+            <input type="text" placeholder="digite algo..." />
+          </div>
         </ContainerLeftForm>
         <ContainerPayment>
-          <img src={cifrao} alt="" />
-          <h3>Pagamento</h3>
-          <p>
-            O pagamento é feito na entrega. Escolha a forma que deseja pagar
-          </p>
+          <div>
+            <div className="imgSideTitle">
+              <img src={cifrao} alt="" />
+            </div>
+            <div className="titleAndDesc">
+              <h3>Pagamento</h3>
+              <p>
+                O pagamento é feito na entrega. Escolha a forma que deseja pagar
+              </p>
+            </div>
+          </div>
           <div>
             <button>
               <img src={card} alt="" />
@@ -59,6 +72,7 @@ export function CheckoutContainer() {
           </div>
         </ContainerPayment>
       </CheckoutLeft>
+      //? Componente ao lado
       <CheckoutRight>
         <h1>Cafés selecionados</h1>
         <ContainerRightCountCoffe>

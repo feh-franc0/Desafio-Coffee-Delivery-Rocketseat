@@ -43,6 +43,33 @@ export const ContainerLeftForm = styled.div`
   margin-bottom: 12px;
   box-sizing: border-box;
   padding: 40px;
+
+  .imgSideTitle {
+    display: inline-block;
+    top: -15px;
+    position: relative;
+  }
+
+  .titleAndDesc {
+    display: inline-block;
+    margin-left: 10px;
+    h3 {
+      margin: 0;
+      font-family: "Roboto";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 130%;
+    }
+    p {
+      margin: 0;
+      font-family: "Roboto";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 130%;
+    }
+  }
 `;
 
 export const ContainerPayment = styled.div`
@@ -52,6 +79,33 @@ export const ContainerPayment = styled.div`
   border-radius: 6px;
   box-sizing: border-box;
   padding: 40px;
+
+  .imgSideTitle {
+    display: inline-block;
+    top: -15px;
+    position: relative;
+  }
+
+  .titleAndDesc {
+    display: inline-block;
+    margin-left: 10px;
+    h3 {
+      margin: 0;
+      font-family: "Roboto";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 130%;
+    }
+    p {
+      margin: 0;
+      font-family: "Roboto";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 130%;
+    }
+  }
 `;
 
 export const ContainerRightCountCoffe = styled.div`
@@ -63,12 +117,11 @@ export const ContainerRightCountCoffe = styled.div`
   padding: 40px;
 
   div {
-    
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: flex-start;
-padding: 0px;
-gap: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 12px;
   }
 `;
