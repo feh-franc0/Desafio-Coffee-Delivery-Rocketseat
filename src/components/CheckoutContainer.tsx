@@ -56,7 +56,7 @@ export function CheckoutContainer() {
               </p>
             </div>
           </div>
-          <div>
+          <div className="paymentButtons">
             <button>
               <img src={card} alt="" />
               <p>Cartão de crédito</p>

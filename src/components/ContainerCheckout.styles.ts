@@ -46,7 +46,7 @@ export const ContainerLeftForm = styled.div`
 
   .imgSideTitle {
     display: inline-block;
-    top: -15px;
+    top: -14px;
     position: relative;
   }
 
@@ -58,7 +58,7 @@ export const ContainerLeftForm = styled.div`
       font-family: "Roboto";
       font-style: normal;
       font-weight: 400;
-      font-size: 16px;
+      font-size: 1.1rem;
       line-height: 130%;
     }
     p {
@@ -82,7 +82,7 @@ export const ContainerPayment = styled.div`
 
   .imgSideTitle {
     display: inline-block;
-    top: -15px;
+    top: -14px;
     position: relative;
   }
 
@@ -94,7 +94,7 @@ export const ContainerPayment = styled.div`
       font-family: "Roboto";
       font-style: normal;
       font-weight: 400;
-      font-size: 16px;
+      font-size: 1.1rem;
       line-height: 130%;
     }
     p {
@@ -104,6 +104,33 @@ export const ContainerPayment = styled.div`
       font-weight: 400;
       font-size: 14px;
       line-height: 130%;
+    }
+  }
+
+  .paymentButtons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+    padding: 32px 0px;
+    gap: 12px;
+
+    button {
+      width: 178.67px;
+      height: 51px;
+
+      cursor: pointer;
+
+      background: #e6e5e5;
+      border-radius: 6px;
+      border: none;
+
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 16px;
+      gap: 12px;
     }
   }
 `;
