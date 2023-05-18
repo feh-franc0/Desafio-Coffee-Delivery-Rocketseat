@@ -84,33 +84,39 @@ export function CheckoutContainer() {
       <CheckoutRight>
         <h1>Cafés selecionados</h1>
         <ContainerRightCountCoffe>
-          <div>
-            <div>
-              <div>
-                <img src={imageCoffe} alt="" />
-              </div>
+          {/* ---------------------------- */}
+          <div className="coffeeItens">
+            <div className="divImgCoffeeItens">
+              <img src={imageCoffe} alt="" />
+            </div>
+            <div className="nameAmountDeleteCoffeeItens">
               <div>
                 <p>Latte</p>
-                <div>
-                  <div>
-                    <button>
-                      <img src={iconMenos} alt="" />
-                    </button>
-                    <div> 10 </div>
-                    <button>
-                      <img src={iconeMais} alt="" />
-                    </button>
-                  </div>
+              </div>
 
+              <div className="actionsCoffeeItens">
+                <div className="actionsCountItensCoffee">
                   <button>
-                    <img src={trash} alt="" />
-                    Remover
+                    <img src={iconMenos} alt="" />
+                  </button>
+                  <div className="countItensCoffee"> 10 </div>
+                  <button>
+                    <img src={iconeMais} alt="" />
                   </button>
                 </div>
+
+                <button>
+                  <img src={trash} alt="" />
+                  Remover
+                </button>
               </div>
+
             </div>
-            <p>R$ 9,90</p>
+            <div>
+              <p>R$ 9,90</p>
+            </div>
           </div>
+          {/* ---------------------------- */}
 
           <hr />
           <div className="priceSummary">

@@ -403,158 +403,61 @@ export const ContainerRightCountCoffe = styled.div`
   padding: 40px;
   gap: 24px;
 
+  /* ---------------------------------- */
   .coffeeItens {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
-    padding: 8px 4px;
-    gap: 59px;
-
-    width: 368px;
+    width: 100%;
     height: 80px;
-
-    /* Base/Card */
-
-    background: #f3f2f2;
-
-    /* Inside auto layout */
-
+    /* background: red; */
     flex: none;
-    order: 2;
+    order: 0;
     align-self: stretch;
     flex-grow: 0;
 
-    .infoItenCoffee {
+    .divImgCoffeeItens {
       display: flex;
-      flex-direction: row;
-      align-items: center;
-      padding: 0px;
-      gap: 20px;
-
-      width: 255px;
-      /* height: 64px; */
-
-      /* Inside auto layout */
+      width: 64px;
+      height: 100%;
 
       flex: none;
       order: 0;
       flex-grow: 0;
+    }
 
-      .imgItenCoffee {
-        img {
-          width: 80px;
-          height: 80px;
+    .nameAmountDeleteCoffeeItens {
+      display: flex;
+      background-color: blue;
+      flex-direction: column;
 
-          /* Inside auto layout */
-
-          flex: none;
-          order: 0;
-          flex-grow: 0;
-        }
-      }
-
-      .detailsItenCoffee {
+      .actionsCoffeeItens {
         display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 0px;
+        flex-direction: row;
         gap: 8px;
 
-        width: 171px;
-        height: 61px;
-
-        /* Inside auto layout */
-
-        flex: none;
-        order: 1;
-        flex-grow: 0;
-
-        p {
-          width: 37px;
-          height: 21px;
-
-          /* Text/Regular M */
-
-          font-family: "Roboto";
-          font-style: normal;
-          font-weight: 400;
-          font-size: 16px;
-          line-height: 130%;
-          /* identical to box height, or 21px */
-
-          display: flex;
-          align-items: center;
-
-          /* Base/Subtitle */
-
-          color: #403937;
-
-          /* Inside auto layout */
-
-          flex: none;
-          order: 0;
-          flex-grow: 0;
-        }
-        .actionsItenCoffee {
+        .actionsCountItensCoffee {
           display: flex;
           flex-direction: row;
-          justify-content: center;
-          align-items: center;
-          padding: 8px;
-          gap: 4px;
-
-          width: 72px;
-          height: 32px;
-
-          /* Base/Button */
-
-          background: #e6e5e5;
+          background: #E6E5E5;
           border-radius: 6px;
 
-          /* Inside auto layout */
-
-          flex: none;
-          order: 0;
-          flex-grow: 0;
-
-          .counterItensCoffee {
+          button {
+            background: none;
+            border: none;
           }
 
-          .buttonRemoveItenCoffee {
+          .countItensCoffee {
+            display: flex;
+            justify-content: center;
+            align-items: center;
           }
         }
       }
     }
-
-    p {
-      width: 55px;
-      height: 21px;
-
-      /* Text/Bold M */
-
-      font-family: "Roboto";
-      font-style: normal;
-      font-weight: 700;
-      font-size: 16px;
-      line-height: 130%;
-      /* identical to box height, or 21px */
-
-      display: flex;
-      align-items: center;
-      text-align: right;
-
-      /* Base/Text */
-
-      color: #574f4d;
-
-      /* Inside auto layout */
-
-      flex: none;
-      order: 1;
-      flex-grow: 0;
-    }
   }
+  /* ---------------------------------- */
 
   .priceSummary {
     margin-top: 24px;
