@@ -105,12 +105,11 @@ export function CheckoutContainer() {
                   </button>
                 </div>
 
-                <button>
-                  <img src={trash} alt="" />
-                  Remover
+                <button className="actionsRemove">
+                  <img className="imgAndTextActionsRemove" src={trash} alt="" />
+                  <span className="imgAndTextActionsRemove">Remover</span>
                 </button>
               </div>
-
             </div>
             <div>
               <p>R$ 9,90</p>

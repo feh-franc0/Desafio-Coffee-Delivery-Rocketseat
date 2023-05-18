@@ -440,18 +440,41 @@ export const ContainerRightCountCoffe = styled.div`
         .actionsCountItensCoffee {
           display: flex;
           flex-direction: row;
-          background: #E6E5E5;
+          background: #e6e5e5;
           border-radius: 6px;
+          padding: 8px;
 
           button {
             background: none;
             border: none;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            cursor: pointer;
           }
 
           .countItensCoffee {
             display: flex;
             justify-content: center;
             align-items: center;
+          }
+        }
+
+        .actionsRemove {
+          display: flex;
+          flex-direction: row;
+          background: #e6e5e5;
+          border-radius: 6px;
+          padding: 8px;
+          border: none;
+          cursor: pointer;
+
+          .imgAndTextActionsRemove {
+            position: relative;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            height: 100%;
           }
         }
       }
