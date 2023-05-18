@@ -429,8 +429,25 @@ export const ContainerRightCountCoffe = styled.div`
 
     .nameAmountDeleteCoffeeItens {
       display: flex;
-      background-color: blue;
+      /* background-color: blue; */
       flex-direction: column;
+      gap: 10px;
+      display: flex;
+      justify-content: center;
+      height: 100%;
+
+      .titleCoffeeItens {
+        font-family: "Roboto";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 1rem;
+        display: flex;
+        align-items: center;
+        color: #403937;
+        p{
+          margin: 0;
+        }
+      }
 
       .actionsCoffeeItens {
         display: flex;
@@ -477,6 +494,20 @@ export const ContainerRightCountCoffe = styled.div`
             height: 100%;
           }
         }
+      }
+    }
+
+    .priceCoffeeItens {
+      p {
+        font-family: "Roboto";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 130%;
+        color: #574f4d;
+        display: flex;
+        align-items: center;
+        text-align: right;
       }
     }
   }

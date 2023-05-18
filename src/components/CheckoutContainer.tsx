@@ -90,7 +90,7 @@ export function CheckoutContainer() {
               <img src={imageCoffe} alt="" />
             </div>
             <div className="nameAmountDeleteCoffeeItens">
-              <div>
+              <div className="titleCoffeeItens">
                 <p>Latte</p>
               </div>
 
@@ -111,7 +111,7 @@ export function CheckoutContainer() {
                 </button>
               </div>
             </div>
-            <div>
+            <div className="priceCoffeeItens">
               <p>R$ 9,90</p>
             </div>
           </div>
