@@ -395,7 +395,8 @@ export const ContainerPayment = styled.div`
 
 export const ContainerRightCountCoffe = styled.div`
   width: 100%;
-  height: 498px;
+  max-height: 100%;
+  /* height: 498px; */
   background: #f3f2f2;
   border-radius: 6px 44px;
   box-sizing: border-box;
@@ -432,7 +433,7 @@ export const ContainerRightCountCoffe = styled.div`
       gap: 20px;
 
       width: 255px;
-      height: 64px;
+      /* height: 64px; */
 
       /* Inside auto layout */
 

@@ -80,19 +80,19 @@ export function CheckoutContainer() {
           </div>
         </ContainerPayment>
       </CheckoutLeft>
+
       <CheckoutRight>
         <h1>Cafés selecionados</h1>
         <ContainerRightCountCoffe>
-          <div className="coffeeItens">
-            <div className="infoItenCoffee">
-              <div className="imgItenCoffee">
+          <div>
+            <div>
+              <div>
                 <img src={imageCoffe} alt="" />
               </div>
-              <div className="detailsItenCoffee">
+              <div>
                 <p>Latte</p>
-                <div className="actionsItenCoffe">
-
-                  <div className="counterItensCoffee">
+                <div>
+                  <div>
                     <button>
                       <img src={iconMenos} alt="" />
                     </button>
@@ -102,11 +102,10 @@ export function CheckoutContainer() {
                     </button>
                   </div>
 
-                  <button className="buttonRemoveItenCoffee">
+                  <button>
                     <img src={trash} alt="" />
                     Remover
                   </button>
-                  
                 </div>
               </div>
             </div>
