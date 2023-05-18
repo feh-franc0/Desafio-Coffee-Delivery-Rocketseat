@@ -78,7 +78,7 @@ export const ContainerLeftForm = styled.div`
     padding-top: 32px;
     gap: 16px;
 
-    width: 560px;
+    width: 100%;
     height: 216px;
 
     /* Inside auto layout */
@@ -99,7 +99,7 @@ export const ContainerLeftForm = styled.div`
       padding: 12px;
       gap: 4px;
 
-      width: 200px;
+      width: 41.5%;
       height: 42px;
 
       /* Base/Input */
@@ -128,7 +128,7 @@ export const ContainerLeftForm = styled.div`
       padding: 12px;
       gap: 4px;
 
-      width: 560px;
+      width: 100%;
       height: 42px;
 
       /* Base/Input */
@@ -154,7 +154,7 @@ export const ContainerLeftForm = styled.div`
       padding: 0px;
       gap: 12px;
 
-      width: 560px;
+      width: 100%;
       height: 42px;
 
       /* Inside auto layout */
@@ -175,7 +175,7 @@ export const ContainerLeftForm = styled.div`
         padding: 12px;
         gap: 4px;
 
-        width: 200px;
+        width: 41.5%;
         height: 42px;
 
         /* Base/Input */
@@ -204,7 +204,7 @@ export const ContainerLeftForm = styled.div`
         padding: 12px;
         gap: 4px;
 
-        width: 348px;
+        width: 50%;
         height: 42px;
 
         /* Base/Input */
@@ -230,7 +230,7 @@ export const ContainerLeftForm = styled.div`
       padding: 0px;
       gap: 12px;
 
-      width: 560px;
+      width: 100%;
       height: 42px;
 
       /* Inside auto layout */
@@ -251,7 +251,7 @@ export const ContainerLeftForm = styled.div`
         padding: 12px;
         gap: 4px;
 
-        width: 200px;
+        width: 41.5%;
         height: 42px;
 
         /* Base/Input */
@@ -280,7 +280,7 @@ export const ContainerLeftForm = styled.div`
         padding: 12px;
         gap: 4px;
 
-        width: 276px;
+        width: 10%;
         height: 42px;
 
         /* Base/Input */
@@ -309,7 +309,7 @@ export const ContainerLeftForm = styled.div`
         padding: 12px;
         gap: 4px;
 
-        width: 60px;
+        width: 10%;
         height: 42px;
 
         /* Base/Input */
@@ -375,7 +375,7 @@ export const ContainerPayment = styled.div`
     gap: 12px;
 
     button {
-      width: 178.67px;
+      width: 100%;
       height: 51px;
 
       cursor: pointer;
