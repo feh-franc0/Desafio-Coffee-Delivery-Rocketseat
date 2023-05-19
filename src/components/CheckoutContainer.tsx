@@ -86,31 +86,34 @@ export function CheckoutContainer() {
         <ContainerRightCountCoffe>
           {/* ---------------------------- */}
           <div className="coffeeItens">
-            <div className="divImgCoffeeItens">
-              <img src={imageCoffe} alt="" />
-            </div>
-            <div className="nameAmountDeleteCoffeeItens">
-              <div className="titleCoffeeItens">
-                <p>Latte</p>
+            <div className="containerImgTitleActions">
+              <div className="divImgCoffeeItens">
+                <img src={imageCoffe} alt="" />
               </div>
-
-              <div className="actionsCoffeeItens">
-                <div className="actionsCountItensCoffee">
-                  <button>
-                    <img src={iconMenos} alt="" />
-                  </button>
-                  <div className="countItensCoffee"> 10 </div>
-                  <button>
-                    <img src={iconeMais} alt="" />
-                  </button>
+              <div className="nameAmountDeleteCoffeeItens">
+                <div className="titleCoffeeItens">
+                  <p>Latte</p>
                 </div>
 
-                <button className="actionsRemove">
-                  <img className="imgAndTextActionsRemove" src={trash} alt="" />
-                  <span className="imgAndTextActionsRemove">Remover</span>
-                </button>
+                <div className="actionsCoffeeItens">
+                  <div className="actionsCountItensCoffee">
+                    <button>
+                      <img src={iconMenos} alt="" />
+                    </button>
+                    <div className="countItensCoffee"> 10 </div>
+                    <button>
+                      <img src={iconeMais} alt="" />
+                    </button>
+                  </div>
+
+                  <button className="actionsRemove">
+                    <img className="imgAndTextActionsRemove" src={trash} alt="" />
+                    <span className="imgAndTextActionsRemove">Remover</span>
+                  </button>
+                </div>
               </div>
             </div>
+
             <div className="priceCoffeeItens">
               <p>R$ 9,90</p>
             </div>

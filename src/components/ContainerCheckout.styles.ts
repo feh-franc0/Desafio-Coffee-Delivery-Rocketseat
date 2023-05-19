@@ -1,15 +1,18 @@
 import styled from "styled-components";
 
 export const ContainerCheckout = styled.div`
-  width: 90%;
-  margin: 40px auto;
+  width: 1120px;
+  margin: 100px auto;
+  gap: 32px;
+  display: flex;
+  flex-direction: row;
 `;
 
 export const CheckoutLeft = styled.div`
   float: left;
-  width: 60%;
+  width: 100%;
   box-sizing: border-box;
-  padding: 40px;
+  /* padding: 40px; */
 
   h1 {
     font-family: "Baloo 2";
@@ -22,9 +25,9 @@ export const CheckoutLeft = styled.div`
 
 export const CheckoutRight = styled.div`
   float: right;
-  width: 40%;
+  width: 100%;
   box-sizing: border-box;
-  padding: 40px;
+  /* padding: 40px; */
 
   h1 {
     font-family: "Baloo 2";
@@ -43,6 +46,7 @@ export const ContainerLeftForm = styled.div`
   margin-bottom: 12px;
   box-sizing: border-box;
   padding: 40px;
+  min-width: 650px;
 
   .imgSideTitle {
     display: inline-block;
@@ -337,6 +341,7 @@ export const ContainerPayment = styled.div`
   border-radius: 6px;
   box-sizing: border-box;
   padding: 40px;
+  min-width: 650px;
 
   .imgSideTitle {
     display: inline-block;
@@ -402,6 +407,7 @@ export const ContainerRightCountCoffe = styled.div`
   box-sizing: border-box;
   padding: 40px;
   gap: 24px;
+  min-width: 450px;
 
   /* ---------------------------------- */
   .coffeeItens {
@@ -416,6 +422,13 @@ export const ContainerRightCountCoffe = styled.div`
     order: 0;
     align-self: stretch;
     flex-grow: 0;
+
+    .containerImgTitleActions {
+      display: flex;
+      flex-direction: row;
+      height: 100%;
+      gap: 30px;
+    }
 
     .divImgCoffeeItens {
       display: flex;
@@ -444,7 +457,7 @@ export const ContainerRightCountCoffe = styled.div`
         display: flex;
         align-items: center;
         color: #403937;
-        p{
+        p {
           margin: 0;
         }
       }
