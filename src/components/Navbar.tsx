@@ -30,6 +30,7 @@ export function Navbar() {
 
   return (
     <DivContainer>
+      <div className="headerCentering">
       <NavLink to="/">
       <LogoCoffee>
         <img src={LogoCoffeeIcon} alt="" />
@@ -47,6 +48,7 @@ export function Navbar() {
           </Cart>
         </NavLink>
       </Actions>
+      </div>
     </DivContainer>
   );
 }

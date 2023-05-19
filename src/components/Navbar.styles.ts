@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const DivContainer = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   align-items: center;
   padding: 32px 160px;
   gap: 820px;
@@ -22,6 +22,15 @@ export const DivContainer = styled.div`
 
   box-sizing: border-box;
   height: 100px;
+
+  .headerCentering {
+    width: 1120px;
+    margin: 0px auto;
+    /* gap: 32px; */
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+  }
 `;
 
 export const LogoCoffee = styled.div`
