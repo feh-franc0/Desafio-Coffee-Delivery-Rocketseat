@@ -401,13 +401,19 @@ export const ContainerPayment = styled.div`
 export const ContainerRightCountCoffe = styled.div`
   width: 100%;
   max-height: 100%;
-  /* height: 498px; */
   background: #f3f2f2;
   border-radius: 6px 44px;
   box-sizing: border-box;
   padding: 40px;
   gap: 24px;
   min-width: 450px;
+  display: flex;
+  flex-direction: column;
+
+  hr {
+    border: 1px solid #e6e5e5;
+    width: 100%;
+  }
 
   /* ---------------------------------- */
   .coffeeItens {
@@ -527,7 +533,6 @@ export const ContainerRightCountCoffe = styled.div`
   /* ---------------------------------- */
 
   .priceSummary {
-    margin-top: 24px;
     display: flex;
     flex-direction: column;
     justify-content: center;
