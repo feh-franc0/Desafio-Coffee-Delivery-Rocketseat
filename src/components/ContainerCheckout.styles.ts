@@ -629,6 +629,9 @@ export const ContainerRightCountCoffe = styled.div`
     align-self: stretch;
     flex-grow: 0;
     border: none;
+    &:hover{
+      cursor: pointer;
+    }
     p {
       font-family: "Roboto";
       font-style: normal;
