@@ -39,14 +39,39 @@ export const ContainerShippingProduct = styled.div`
 `;
 
 export const DescriptionShippingProduct = styled.div`
-  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 40px;
+  gap: 32px;
   width: 526px;
   height: 270px;
-  border-radius: 6px 36px;
   padding: 40px;
-  /* background: linear-gradient(102.89deg, #DBAC2C 2.61%, #8047F8 98.76%); */
+  border: 2px solid rgba(219, 172, 44, 1);
+  border-radius: 6px 36px;
+
+  .iconAndDesc {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+
+    p {
+      margin: 0;
+
+      /* width: 310px; */
+      /* height: 42px; */
+      font-family: "Roboto";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 130%;
+      color: #574f4d;
+    }
+  }
 `;
 
 export const ImageDescription = styled.div`
-  width: 100%;
+  width: 492px;
+  height: 293px;
 `;
