@@ -410,9 +410,37 @@ export const ContainerRightCountCoffe = styled.div`
   display: flex;
   flex-direction: column;
 
-  hr {
-    border: 1px solid #e6e5e5;
-    width: 100%;
+  .scrollCoffeItens {
+    
+    height: 250px;
+    overflow: hidden auto;
+
+    /* Estilizando a barra de rolagem */
+    &::-webkit-scrollbar {
+      width: 2px; /* Largura da barra de rolagem */
+    }
+
+    /* Estilizando o fundo da barra de rolagem */
+    &::-webkit-scrollbar-track {
+      background-color: #f1f1f1;
+    }
+
+    /* Estilizando o indicador da barra de rolagem */
+    &::-webkit-scrollbar-thumb {
+      background-color: #dbac2c;
+    }
+
+    /* Estilizando o indicador da barra de rolagem quando hover */
+    &::-webkit-scrollbar-thumb:hover {
+      background-color: #555;
+    }
+
+
+    .hrCoffeItens {    
+      margin: 20px 0px;
+      border: 1px solid #e6e5e5;
+      width: 100%;
+    }
   }
 
   /* ---------------------------------- */
@@ -518,6 +546,7 @@ export const ContainerRightCountCoffe = styled.div`
 
     .priceCoffeeItens {
       p {
+        margin-right: 10px;
         font-family: "Roboto";
         font-style: normal;
         font-weight: 700;

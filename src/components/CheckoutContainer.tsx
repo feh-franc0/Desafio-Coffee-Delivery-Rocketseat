@@ -20,7 +20,16 @@ import iconeMais from "../public/iconeMais.svg";
 
 import imageCoffe from "../public/CafecomLeite.png";
 
+
+import { ShopCartContext } from "../contexts/ShopCartContext";
+import { useContext } from "react";
+
+
 export function CheckoutContainer() {
+  
+  const { shopCart, setShopCart }: any = useContext(ShopCartContext);
+  console.log("cart checkout: ", shopCart);
+
   return (
     <ContainerCheckout>
       <CheckoutLeft>
@@ -84,6 +93,7 @@ export function CheckoutContainer() {
       <CheckoutRight>
         <h1>Cafés selecionados</h1>
         <ContainerRightCountCoffe>
+          <div className="scrollCoffeItens">
           {/* ---------------------------- */}
           <div className="coffeeItens">
             <div className="containerImgTitleActions">
@@ -118,9 +128,85 @@ export function CheckoutContainer() {
               <p>R$ 9,90</p>
             </div>
           </div>
-          {/* ---------------------------- */}
+          
+          <hr className="hrCoffeItens" />
 
-          <hr />
+          <div className="coffeeItens">
+            <div className="containerImgTitleActions">
+              <div className="divImgCoffeeItens">
+                <img src={imageCoffe} alt="" />
+              </div>
+              <div className="nameAmountDeleteCoffeeItens">
+                <div className="titleCoffeeItens">
+                  <p>Latte</p>
+                </div>
+
+                <div className="actionsCoffeeItens">
+                  <div className="actionsCountItensCoffee">
+                    <button>
+                      <img src={iconMenos} alt="" />
+                    </button>
+                    <div className="countItensCoffee"> 10 </div>
+                    <button>
+                      <img src={iconeMais} alt="" />
+                    </button>
+                  </div>
+
+                  <button className="actionsRemove">
+                    <img className="imgAndTextActionsRemove" src={trash} alt="" />
+                    <span className="imgAndTextActionsRemove">Remover</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div className="priceCoffeeItens">
+              <p>R$ 9,90</p>
+            </div>
+          </div>
+
+          <hr className="hrCoffeItens" />
+
+          {/* <div className="coffeeItens">
+            <div className="containerImgTitleActions">
+              <div className="divImgCoffeeItens">
+                <img src={imageCoffe} alt="" />
+              </div>
+              <div className="nameAmountDeleteCoffeeItens">
+                <div className="titleCoffeeItens">
+                  <p>Latte</p>
+                </div>
+
+                <div className="actionsCoffeeItens">
+                  <div className="actionsCountItensCoffee">
+                    <button>
+                      <img src={iconMenos} alt="" />
+                    </button>
+                    <div className="countItensCoffee"> 10 </div>
+                    <button>
+                      <img src={iconeMais} alt="" />
+                    </button>
+                  </div>
+
+                  <button className="actionsRemove">
+                    <img className="imgAndTextActionsRemove" src={trash} alt="" />
+                    <span className="imgAndTextActionsRemove">Remover</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div className="priceCoffeeItens">
+              <p>R$ 9,90</p>
+            </div>
+          </div> */}
+
+          {/* <hr className="hrCoffeItens" /> */}
+          
+          {/* ---------------------------- */}
+          </div>
+
+
           <div className="priceSummary">
             <div>
               <p>Total de itens</p>
