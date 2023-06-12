@@ -24,7 +24,7 @@ import {
   ActionsBuyTest,
 } from "./CoffeeList.styles";
 
-interface PropsCoffee {
+export interface PropsCoffee {
   id: string;
   CoffeeImage: string;
   CoffeeType: string;
@@ -189,8 +189,8 @@ export function GridListCoffee() {
           if (item.id === objCart.id) {
             return {
               ...item,
-              CoffeAmout: objCart.CoffeAmout,
-              // CoffeAmout: item.CoffeAmout + objCart.CoffeAmout,
+              // CoffeAmout: objCart.CoffeAmout,
+              CoffeAmout: item.CoffeAmout + objCart.CoffeAmout,
             };
           }
           return item;
@@ -251,16 +251,6 @@ export function GridListCoffee() {
             </ActionsBuyTest>
           </BuyTest>
         </CoffeeIten>
-        // <CoffeeItem
-        //   key={list.id}
-        //   CoffeeId={list.id}
-        //   CoffeeImage={list.CoffeeImage}
-        //   CoffeeType={list.CoffeeType}
-        //   CoffeeTitle={list.CoffeeTitle}
-        //   CoffeeDescription={list.CoffeeDescription}
-        //   CoffeePrice={list.CoffeePrice}
-        //   CoffeAmout={list.CoffeAmout}
-        // />
       ))}
     </GridListCoffeeItens>
   );

@@ -379,6 +379,11 @@ export const ContainerPayment = styled.div`
     padding: 32px 0px;
     gap: 12px;
 
+    .selecionado {
+      background: #ebe5f9;
+      border: 1px solid #8047f8;
+    }
+
     button {
       width: 100%;
       height: 51px;
@@ -411,8 +416,7 @@ export const ContainerRightCountCoffe = styled.div`
   flex-direction: column;
 
   .scrollCoffeItens {
-    
-    height: 250px;
+    max-height: 250px;
     overflow: hidden auto;
 
     /* Estilizando a barra de rolagem */
@@ -435,8 +439,7 @@ export const ContainerRightCountCoffe = styled.div`
       background-color: #555;
     }
 
-
-    .hrCoffeItens {    
+    .hrCoffeItens {
       margin: 20px 0px;
       border: 1px solid #e6e5e5;
       width: 100%;
@@ -658,8 +661,13 @@ export const ContainerRightCountCoffe = styled.div`
     align-self: stretch;
     flex-grow: 0;
     border: none;
-    &:hover{
+    &:hover {
       cursor: pointer;
+    }
+
+    a {
+      text-decoration: none;
+      width: 100%;
     }
     p {
       font-family: "Roboto";

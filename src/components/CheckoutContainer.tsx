@@ -20,15 +20,59 @@ import iconeMais from "../public/iconeMais.svg";
 
 import imageCoffe from "../public/CafecomLeite.png";
 
-
 import { ShopCartContext } from "../contexts/ShopCartContext";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
+import { NavLink } from "react-router-dom";
 
+import {PropsCoffee} from "./GridListCoffee"
 
 export function CheckoutContainer() {
-  
   const { shopCart, setShopCart }: any = useContext(ShopCartContext);
+  const [opcaoSelecionada, setOpcaoSelecionada]: any = useState(null);
+  const [dadosFormulario, setDadosFormulario] = useState({
+    cep: "",
+    rua: "",
+    numero: "",
+    complemento: "",
+    bairro: "",
+    cidade: "",
+    uf: "",
+  });
+  const [totalPrice, setTotalPrice] = useState(0);
+
+  useEffect(() => {
+    const array = shopCart;
+
+    let total = 0;
+
+    array.forEach((item:PropsCoffee) => {
+      const quantity = item.CoffeAmout;
+      const price = parseFloat(item.CoffeePrice.replace(',', '.'));
+      const subtotal = quantity * price;
+      total += subtotal;
+    });
+
+    setTotalPrice(total);
+  }, []);
+
+  const selecionarOpcao = (opcao: any) => {
+    setOpcaoSelecionada(opcao);
+  };
+
+  const handleChange = (event: any) => {
+    const { name, value } = event.target;
+    setDadosFormulario((prevDados) => ({
+      ...prevDados,
+      [name]: value,
+    }));
+  };
+
+
+
+  console.log("totalPrice: ", totalPrice);
   console.log("cart checkout: ", shopCart);
+  console.log("dadosFormulario: ", dadosFormulario);
+  console.log("opcaoSelecionada: ", opcaoSelecionada);
 
   return (
     <ContainerCheckout>
@@ -44,20 +88,58 @@ export function CheckoutContainer() {
           </div>
 
           <div className="personalInfos">
-            <input className="CEP" type="text" placeholder="CEP" />
-            <input className="Rua" type="text" placeholder="Rua" />
+            <input
+              name="cep"
+              className="CEP"
+              type="text"
+              placeholder="CEP"
+              value={dadosFormulario.cep}
+              onChange={handleChange}
+            />
+            <input
+              name="rua"
+              className="Rua"
+              type="text"
+              placeholder="Rua"
+              value={dadosFormulario.rua}
+              onChange={handleChange}
+            />
             <div className="infosNumComp">
-              <input className="Numero" type="text" placeholder="Número" />
               <input
+                name="numero"
+                className="Numero"
+                type="text"
+                placeholder="Número"
+                value={dadosFormulario.numero}
+                onChange={handleChange}
+              />
+              <input
+                name="complemento"
                 className="Complemento"
                 type="text"
                 placeholder="Complemento"
+                value={dadosFormulario.complemento}
+                onChange={handleChange}
               />
             </div>
             <div className="infosBaiCidUf">
-              <input className="Bairro" type="text" placeholder="Bairro" />
-              <input className="Cidade" type="text" placeholder="Cidade" />
-              <input className="UF" type="text" placeholder="UF" />
+              <input
+                name="bairro"
+                className="Bairro"
+                type="text"
+                placeholder="Bairro"
+                value={dadosFormulario.bairro}
+                onChange={handleChange}
+              />
+              <input
+                name="cidade"
+                className="Cidade"
+                type="text"
+                placeholder="Cidade"
+                value={dadosFormulario.cidade}
+                onChange={handleChange}
+              />
+              <input name="uf" className="UF" type="text" placeholder="UF" />
             </div>
           </div>
         </ContainerLeftForm>
@@ -74,15 +156,24 @@ export function CheckoutContainer() {
             </div>
           </div>
           <div className="paymentButtons">
-            <button>
+            <button
+              className={opcaoSelecionada === "credito" ? "selecionado" : ""}
+              onClick={() => selecionarOpcao("credito")}
+            >
               <img src={card} alt="" />
               <p>Cartão de crédito</p>
             </button>
-            <button>
+            <button
+              className={opcaoSelecionada === "debito" ? "selecionado" : ""}
+              onClick={() => selecionarOpcao("debito")}
+            >
               <img src={bank} alt="" />
               <p>cartão de débito</p>
             </button>
-            <button>
+            <button
+              className={opcaoSelecionada === "dinheiro" ? "selecionado" : ""}
+              onClick={() => selecionarOpcao("dinheiro")}
+            >
               <img src={money} alt="" />
               <p>dinheiro</p>
             </button>
@@ -94,123 +185,60 @@ export function CheckoutContainer() {
         <h1>Cafés selecionados</h1>
         <ContainerRightCountCoffe>
           <div className="scrollCoffeItens">
-          {/* ---------------------------- */}
-          <div className="coffeeItens">
-            <div className="containerImgTitleActions">
-              <div className="divImgCoffeeItens">
-                <img src={imageCoffe} alt="" />
-              </div>
-              <div className="nameAmountDeleteCoffeeItens">
-                <div className="titleCoffeeItens">
-                  <p>Latte</p>
-                </div>
+            {shopCart.map((props: any) => (
+              <div key={props.id}>
+                <div key={props.id} className="coffeeItens">
+                  <div className="containerImgTitleActions">
+                    <div className="divImgCoffeeItens">
+                      <img src={props.CoffeeImage} alt="" />
+                    </div>
+                    <div className="nameAmountDeleteCoffeeItens">
+                      <div className="titleCoffeeItens">
+                        <p>{props.CoffeeTitle}</p>
+                      </div>
 
-                <div className="actionsCoffeeItens">
-                  <div className="actionsCountItensCoffee">
-                    <button>
-                      <img src={iconMenos} alt="" />
-                    </button>
-                    <div className="countItensCoffee"> 10 </div>
-                    <button>
-                      <img src={iconeMais} alt="" />
-                    </button>
+                      <div className="actionsCoffeeItens">
+                        <div className="actionsCountItensCoffee">
+                          <button>
+                            <img src={iconMenos} alt="" />
+                          </button>
+                          <div className="countItensCoffee">
+                            {" "}
+                            {props.CoffeAmout}{" "}
+                          </div>
+                          <button>
+                            <img src={iconeMais} alt="" />
+                          </button>
+                        </div>
+
+                        <button className="actionsRemove">
+                          <img
+                            className="imgAndTextActionsRemove"
+                            src={trash}
+                            alt=""
+                          />
+                          <span className="imgAndTextActionsRemove">
+                            Remover
+                          </span>
+                        </button>
+                      </div>
+                    </div>
                   </div>
 
-                  <button className="actionsRemove">
-                    <img className="imgAndTextActionsRemove" src={trash} alt="" />
-                    <span className="imgAndTextActionsRemove">Remover</span>
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <div className="priceCoffeeItens">
-              <p>R$ 9,90</p>
-            </div>
-          </div>
-          
-          <hr className="hrCoffeItens" />
-
-          <div className="coffeeItens">
-            <div className="containerImgTitleActions">
-              <div className="divImgCoffeeItens">
-                <img src={imageCoffe} alt="" />
-              </div>
-              <div className="nameAmountDeleteCoffeeItens">
-                <div className="titleCoffeeItens">
-                  <p>Latte</p>
-                </div>
-
-                <div className="actionsCoffeeItens">
-                  <div className="actionsCountItensCoffee">
-                    <button>
-                      <img src={iconMenos} alt="" />
-                    </button>
-                    <div className="countItensCoffee"> 10 </div>
-                    <button>
-                      <img src={iconeMais} alt="" />
-                    </button>
+                  <div className="priceCoffeeItens">
+                    <p>R$ {props.CoffeePrice}</p>
                   </div>
-
-                  <button className="actionsRemove">
-                    <img className="imgAndTextActionsRemove" src={trash} alt="" />
-                    <span className="imgAndTextActionsRemove">Remover</span>
-                  </button>
                 </div>
-              </div>
-            </div>
 
-            <div className="priceCoffeeItens">
-              <p>R$ 9,90</p>
-            </div>
+                <hr className="hrCoffeItens" />
+              </div>
+            ))}
           </div>
-
-          <hr className="hrCoffeItens" />
-
-          {/* <div className="coffeeItens">
-            <div className="containerImgTitleActions">
-              <div className="divImgCoffeeItens">
-                <img src={imageCoffe} alt="" />
-              </div>
-              <div className="nameAmountDeleteCoffeeItens">
-                <div className="titleCoffeeItens">
-                  <p>Latte</p>
-                </div>
-
-                <div className="actionsCoffeeItens">
-                  <div className="actionsCountItensCoffee">
-                    <button>
-                      <img src={iconMenos} alt="" />
-                    </button>
-                    <div className="countItensCoffee"> 10 </div>
-                    <button>
-                      <img src={iconeMais} alt="" />
-                    </button>
-                  </div>
-
-                  <button className="actionsRemove">
-                    <img className="imgAndTextActionsRemove" src={trash} alt="" />
-                    <span className="imgAndTextActionsRemove">Remover</span>
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <div className="priceCoffeeItens">
-              <p>R$ 9,90</p>
-            </div>
-          </div> */}
-
-          {/* <hr className="hrCoffeItens" /> */}
-          
-          {/* ---------------------------- */}
-          </div>
-
 
           <div className="priceSummary">
             <div>
               <p>Total de itens</p>
-              <p>R$ 29,70</p>
+              <p>R$ {totalPrice}</p>
             </div>
             <div>
               <p>Entrega</p>
@@ -218,11 +246,13 @@ export function CheckoutContainer() {
             </div>
             <div className="totalPrice">
               <p>Total</p>
-              <p>R$ 33,20</p>
+              <p>R$ {totalPrice + 3.50}</p>
             </div>
           </div>
           <button className="confirmPurchase">
-            <p>Confirmar Pedido</p>
+            <NavLink to="/success">
+              <p>Confirmar Pedido</p>
+            </NavLink>
           </button>
         </ContainerRightCountCoffe>
       </CheckoutRight>
