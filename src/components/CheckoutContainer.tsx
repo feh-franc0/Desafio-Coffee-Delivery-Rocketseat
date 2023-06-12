@@ -20,7 +20,7 @@ import iconeMais from "../public/iconeMais.svg";
 
 import imageCoffe from "../public/CafecomLeite.png";
 
-import { ShopCartContext } from "../contexts/ShopCartContext";
+import { ShopCartContext, deliveryInfoContext } from "../contexts/ShopCartContext";
 import { useContext, useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 
@@ -28,6 +28,8 @@ import {PropsCoffee} from "./GridListCoffee"
 
 export function CheckoutContainer() {
   const { shopCart, setShopCart }: any = useContext(ShopCartContext);
+  const { deliveryInfo, setDeliveryInfo }: any = useContext(deliveryInfoContext);
+  
   const [opcaoSelecionada, setOpcaoSelecionada]: any = useState(null);
   const [dadosFormulario, setDadosFormulario] = useState({
     cep: "",
@@ -85,8 +87,9 @@ export function CheckoutContainer() {
     }
   };
 
-  console.log("totalPrice: ", totalPrice);
+  console.log("info delivery: ", deliveryInfo);
   console.log("cart checkout: ", shopCart);
+  console.log("totalPrice: ", totalPrice);
   console.log("dadosFormulario: ", dadosFormulario);
   console.log("opcaoSelecionada: ", opcaoSelecionada);
 

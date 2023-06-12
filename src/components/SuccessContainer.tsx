@@ -6,8 +6,14 @@ import imgDelivery from "../public/deliveryManImage.svg"
 import iconMoney from "../public/moneyIcon.svg"
 import iconTime from "../public/timeIcon.svg"
 import iconLocation from "../public/locationIcon.svg"
+import { useContext } from "react";
+import { deliveryInfoContext } from "../contexts/ShopCartContext";
 
 export function SuccessContainer() {
+  
+  const { deliveryInfo, setDeliveryInfo }: any = useContext(deliveryInfoContext);
+  console.log("deliveryInfo: ", deliveryInfo)
+  
   return (
     <ContainerSuccess>
 
@@ -21,8 +27,8 @@ export function SuccessContainer() {
           <div className="iconAndDesc">
             <img src={iconLocation} alt="" />
             <div>
-              <p>Entrega em <strong>Rua João Daniel Martinelli, 102</strong></p>
-              <p>Farrapos - Porto Alegre, RS</p>
+              <p>Entrega em <strong>{deliveryInfo.rua}, {deliveryInfo.numero}</strong></p>
+              <p>{deliveryInfo.cidade} - {deliveryInfo.bairro}, {deliveryInfo.uf}</p>
             </div>
           </div>
           <div className="iconAndDesc">
@@ -36,7 +42,7 @@ export function SuccessContainer() {
             <img src={iconMoney} alt="" />
             <div>
               <p>Pagamento na entrega</p>
-              <p><strong>Cartão de Crédito</strong></p>
+              <p><strong>{deliveryInfo.FormaDePagamento}</strong></p>
             </div>
           </div>
         </DescriptionShippingProduct>
