@@ -53,7 +53,7 @@ export function CheckoutContainer() {
     });
 
     setTotalPrice(total);
-  }, []);
+  }, [shopCart]);
 
   const selecionarOpcao = (opcao: any) => {
     setOpcaoSelecionada(opcao);
@@ -67,7 +67,23 @@ export function CheckoutContainer() {
     }));
   };
 
+  const addCart = (id: string) => {
+    const index = shopCart.findIndex((objeto: any) => objeto.id === id);
+    if (index !== -1) {
+      const novoArray = [...shopCart];
+      novoArray[index].CoffeAmout++;
+      setShopCart(novoArray);
+    }
+  };
 
+  const subtractCart = (id: string) => {
+    const index = shopCart.findIndex((objeto: any) => objeto.id === id);
+    if (index !== -1) {
+      const novoArray = [...shopCart];
+      novoArray[index].CoffeAmout--;
+      setShopCart(novoArray);
+    }
+  };
 
   console.log("totalPrice: ", totalPrice);
   console.log("cart checkout: ", shopCart);
@@ -199,14 +215,14 @@ export function CheckoutContainer() {
 
                       <div className="actionsCoffeeItens">
                         <div className="actionsCountItensCoffee">
-                          <button>
+                          <button onClick={() => subtractCart(props.id)}>
                             <img src={iconMenos} alt="" />
                           </button>
                           <div className="countItensCoffee">
                             {" "}
                             {props.CoffeAmout}{" "}
                           </div>
-                          <button>
+                          <button onClick={() => addCart(props.id)}>
                             <img src={iconeMais} alt="" />
                           </button>
                         </div>
