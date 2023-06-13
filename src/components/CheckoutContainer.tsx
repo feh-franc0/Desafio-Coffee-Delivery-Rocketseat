@@ -20,16 +20,21 @@ import iconeMais from "../public/iconeMais.svg";
 
 import imageCoffe from "../public/CafecomLeite.png";
 
-import { ShopCartContext, deliveryInfoContext } from "../contexts/ShopCartContext";
+import {
+  ShopCartContext,
+  DeliveryInfoContext,
+} from "../contexts/ShopCartContext";
 import { useContext, useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 
-import {PropsCoffee} from "./GridListCoffee"
+import { PropsCoffee } from "./GridListCoffee";
 
 export function CheckoutContainer() {
   const { shopCart, setShopCart }: any = useContext(ShopCartContext);
-  const { deliveryInfo, setDeliveryInfo }: any = useContext(deliveryInfoContext);
-  
+  console.log("shopCart: ", shopCart)
+  const { deliveryInfo, setDeliveryInfo }: any =
+    useContext(DeliveryInfoContext);
+
   const [opcaoSelecionada, setOpcaoSelecionada]: any = useState(null);
   const [dadosFormulario, setDadosFormulario] = useState({
     cep: "",
@@ -47,9 +52,9 @@ export function CheckoutContainer() {
 
     let total = 0;
 
-    array.forEach((item:PropsCoffee) => {
+    array.forEach((item: PropsCoffee) => {
       const quantity = item.CoffeAmout;
-      const price = parseFloat(item.CoffeePrice.replace(',', '.'));
+      const price = parseFloat(item.CoffeePrice.replace(",", "."));
       const subtotal = quantity * price;
       total += subtotal;
     });
@@ -86,12 +91,6 @@ export function CheckoutContainer() {
       setShopCart(novoArray);
     }
   };
-
-  console.log("info delivery: ", deliveryInfo);
-  console.log("cart checkout: ", shopCart);
-  console.log("totalPrice: ", totalPrice);
-  console.log("dadosFormulario: ", dadosFormulario);
-  console.log("opcaoSelecionada: ", opcaoSelecionada);
 
   return (
     <ContainerCheckout>
@@ -204,54 +203,56 @@ export function CheckoutContainer() {
         <h1>Cafés selecionados</h1>
         <ContainerRightCountCoffe>
           <div className="scrollCoffeItens">
-            {shopCart.map((props: any) => (
-              <div key={props.id}>
-                <div key={props.id} className="coffeeItens">
-                  <div className="containerImgTitleActions">
-                    <div className="divImgCoffeeItens">
-                      <img src={props.CoffeeImage} alt="" />
-                    </div>
-                    <div className="nameAmountDeleteCoffeeItens">
-                      <div className="titleCoffeeItens">
-                        <p>{props.CoffeeTitle}</p>
+            {shopCart
+              .filter((item: any) => item.CoffeAmout > 0) // Filtra os elementos com CoffeAmout maior que 0
+              .map((props: any) => (
+                <div key={props.id}>
+                  <div key={props.id} className="coffeeItens">
+                    <div className="containerImgTitleActions">
+                      <div className="divImgCoffeeItens">
+                        <img src={props.CoffeeImage} alt="" />
                       </div>
-
-                      <div className="actionsCoffeeItens">
-                        <div className="actionsCountItensCoffee">
-                          <button onClick={() => subtractCart(props.id)}>
-                            <img src={iconMenos} alt="" />
-                          </button>
-                          <div className="countItensCoffee">
-                            {" "}
-                            {props.CoffeAmout}{" "}
-                          </div>
-                          <button onClick={() => addCart(props.id)}>
-                            <img src={iconeMais} alt="" />
-                          </button>
+                      <div className="nameAmountDeleteCoffeeItens">
+                        <div className="titleCoffeeItens">
+                          <p>{props.CoffeeTitle}</p>
                         </div>
 
-                        <button className="actionsRemove">
-                          <img
-                            className="imgAndTextActionsRemove"
-                            src={trash}
-                            alt=""
-                          />
-                          <span className="imgAndTextActionsRemove">
-                            Remover
-                          </span>
-                        </button>
+                        <div className="actionsCoffeeItens">
+                          <div className="actionsCountItensCoffee">
+                            <button onClick={() => subtractCart(props.id)}>
+                              <img src={iconMenos} alt="" />
+                            </button>
+                            <div className="countItensCoffee">
+                              {" "}
+                              {props.CoffeAmout}{" "}
+                            </div>
+                            <button onClick={() => addCart(props.id)}>
+                              <img src={iconeMais} alt="" />
+                            </button>
+                          </div>
+
+                          <button className="actionsRemove">
+                            <img
+                              className="imgAndTextActionsRemove"
+                              src={trash}
+                              alt=""
+                            />
+                            <span className="imgAndTextActionsRemove">
+                              Remover
+                            </span>
+                          </button>
+                        </div>
                       </div>
+                    </div>
+
+                    <div className="priceCoffeeItens">
+                      <p>R$ {props.CoffeePrice}</p>
                     </div>
                   </div>
 
-                  <div className="priceCoffeeItens">
-                    <p>R$ {props.CoffeePrice}</p>
-                  </div>
+                  <hr className="hrCoffeItens" />
                 </div>
-
-                <hr className="hrCoffeItens" />
-              </div>
-            ))}
+              ))}
           </div>
 
           <div className="priceSummary">
@@ -265,7 +266,7 @@ export function CheckoutContainer() {
             </div>
             <div className="totalPrice">
               <p>Total</p>
-              <p>R$ {totalPrice + 3.50}</p>
+              <p>R$ {totalPrice + 3.5}</p>
             </div>
           </div>
           <button className="confirmPurchase">

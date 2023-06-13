@@ -7,11 +7,11 @@ import iconMoney from "../public/moneyIcon.svg"
 import iconTime from "../public/timeIcon.svg"
 import iconLocation from "../public/locationIcon.svg"
 import { useContext } from "react";
-import { deliveryInfoContext } from "../contexts/ShopCartContext";
+import { DeliveryInfoContext } from "../contexts/ShopCartContext";
 
 export function SuccessContainer() {
   
-  const { deliveryInfo, setDeliveryInfo }: any = useContext(deliveryInfoContext);
+  const { deliveryInfo, setDeliveryInfo }: any = useContext(DeliveryInfoContext);
   console.log("deliveryInfo: ", deliveryInfo)
   
   return (

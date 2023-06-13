@@ -35,7 +35,7 @@ export interface PropsCoffee {
 }
 
 export function GridListCoffee() {
-  const { shopCart, setShopCart }: any = useContext(ShopCartContext);
+  const { shopCart, setShopCart } = useContext(ShopCartContext);
   const [listCoffee, setListCoffee] = useState<PropsCoffee[]>([
     {
       id: "1",
@@ -175,53 +175,54 @@ export function GridListCoffee() {
     },
   ]);
   console.log("shopCart: ", shopCart);
+  console.log("listCoffee: ", listCoffee);
 
   const handleClick = (id: string) => {
-    // console.log("clicou no btn -> enviar", id);
-    const index = listCoffee.findIndex((objeto) => objeto.id === id);
-    const novoArray = [...listCoffee];
-    const objCart = novoArray[index];
+    console.log("clicou no btn -> enviar", id);
+    // const index = listCoffee.findIndex((objeto) => objeto.id === id);
+    // const novoArray = [...listCoffee];
+    // const objCart = novoArray[index];
 
-    const existingItem = shopCart.find((item: any) => item.id === objCart.id);
-    if (existingItem) {
-      setShopCart((prevCart: any) =>
-        prevCart.map((item: any) => {
-          if (item.id === objCart.id) {
-            return {
-              ...item,
-              // CoffeAmout: objCart.CoffeAmout,
-              CoffeAmout: item.CoffeAmout + objCart.CoffeAmout,
-            };
-          }
-          return item;
-        })
-      );
-    } else {
-      setShopCart((prevCart: any) => [...prevCart, objCart]);
-    }
+    // const existingItem = shopCart.find((item: any) => item.id === objCart.id);
+    // if (existingItem) {
+    //   setShopCart((prevCart: any) =>
+    //     prevCart.map((item: any) => {
+    //       if (item.id === objCart.id) {
+    //         return {
+    //           ...item,
+    //           // CoffeAmout: objCart.CoffeAmout,
+    //           CoffeAmout: item.CoffeAmout + objCart.CoffeAmout,
+    //         };
+    //       }
+    //       return item;
+    //     })
+    //   );
+    // } else {
+    //   setShopCart((prevCart: any) => [...prevCart, objCart]);
+    // }
   };
 
   const addCart = (id: string) => {
-    const index = listCoffee.findIndex((objeto) => objeto.id === id);
+    const index = shopCart.findIndex((objeto) => objeto.id === id);
     if (index !== -1) {
-      const novoArray = [...listCoffee];
+      const novoArray = [...shopCart];
       novoArray[index].CoffeAmout++;
-      setListCoffee(novoArray);
+      setShopCart(novoArray);
     }
   };
 
   const subtractCart = (id: string) => {
-    const index = listCoffee.findIndex((objeto) => objeto.id === id);
+    const index = shopCart.findIndex((objeto) => objeto.id === id);
     if (index !== -1) {
-      const novoArray = [...listCoffee];
+      const novoArray = [...shopCart];
       novoArray[index].CoffeAmout--;
-      setListCoffee(novoArray);
+      setShopCart(novoArray);
     }
   };
 
   return (
     <GridListCoffeeItens>
-      {listCoffee.map((props: any) => (
+      {shopCart.map((props: any) => (
         <CoffeeIten key={props.id}>
           <CoffeeImgTest>
             <img src={props.CoffeeImage} alt="" />
