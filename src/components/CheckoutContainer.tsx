@@ -269,15 +269,15 @@ export function CheckoutContainer() {
           <div className="priceSummary">
             <div>
               <p>Total de itens</p>
-              <p>R$ {totalPrice}</p>
+              <p>R$ {totalPrice.toFixed(2)}</p>
             </div>
             <div>
               <p>Entrega</p>
-              <p>R$ {deliveryInfo.taxaDeEntrega}</p>
+              <p>R$ {deliveryInfo.taxaDeEntrega.toFixed(2)}</p>
             </div>
             <div className="totalPrice">
               <p>Total</p>
-              <p>R$ {totalPrice + deliveryInfo.taxaDeEntrega}</p>
+              <p>R$ {(totalPrice + deliveryInfo.taxaDeEntrega).toFixed(2)}</p>
             </div>
           </div>
           <button className="confirmPurchase">
