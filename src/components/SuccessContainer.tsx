@@ -42,7 +42,7 @@ export function SuccessContainer() {
             <img src={iconMoney} alt="" />
             <div>
               <p>Pagamento na entrega</p>
-              <p><strong>{deliveryInfo.FormaDePagamento}</strong></p>
+              <p><strong>{deliveryInfo.formaDePagamento}</strong></p>
             </div>
           </div>
         </DescriptionShippingProduct>

@@ -30,21 +30,10 @@ import { NavLink } from "react-router-dom";
 import { PropsCoffee } from "./GridListCoffee";
 
 export function CheckoutContainer() {
-  const { shopCart, setShopCart }: any = useContext(ShopCartContext);
-  console.log("shopCart: ", shopCart)
-  const { deliveryInfo, setDeliveryInfo }: any =
-    useContext(DeliveryInfoContext);
-
-  const [opcaoSelecionada, setOpcaoSelecionada]: any = useState(null);
-  const [dadosFormulario, setDadosFormulario] = useState({
-    cep: "",
-    rua: "",
-    numero: "",
-    complemento: "",
-    bairro: "",
-    cidade: "",
-    uf: "",
-  });
+  const { shopCart, setShopCart } = useContext(ShopCartContext);
+  // console.log("shopCart: ", shopCart);
+  const { deliveryInfo, setDeliveryInfo } = useContext(DeliveryInfoContext);
+  console.log("deliveryInfo: ", deliveryInfo);
   const [totalPrice, setTotalPrice] = useState(0);
 
   useEffect(() => {
@@ -62,13 +51,16 @@ export function CheckoutContainer() {
     setTotalPrice(total);
   }, [shopCart]);
 
-  const selecionarOpcao = (opcao: any) => {
-    setOpcaoSelecionada(opcao);
+  const selecionarOpcao = (novaFormaDePagamento: any) => {
+    setDeliveryInfo((prevDeliveryInfo) => ({
+      ...prevDeliveryInfo,
+      formaDePagamento: novaFormaDePagamento,
+    }));
   };
 
   const handleChange = (event: any) => {
     const { name, value } = event.target;
-    setDadosFormulario((prevDados) => ({
+    setDeliveryInfo((prevDados) => ({
       ...prevDados,
       [name]: value,
     }));
@@ -111,7 +103,7 @@ export function CheckoutContainer() {
               className="CEP"
               type="text"
               placeholder="CEP"
-              value={dadosFormulario.cep}
+              value={deliveryInfo.cep}
               onChange={handleChange}
             />
             <input
@@ -119,7 +111,7 @@ export function CheckoutContainer() {
               className="Rua"
               type="text"
               placeholder="Rua"
-              value={dadosFormulario.rua}
+              value={deliveryInfo.rua}
               onChange={handleChange}
             />
             <div className="infosNumComp">
@@ -128,7 +120,7 @@ export function CheckoutContainer() {
                 className="Numero"
                 type="text"
                 placeholder="Número"
-                value={dadosFormulario.numero}
+                value={deliveryInfo.numero}
                 onChange={handleChange}
               />
               <input
@@ -136,7 +128,7 @@ export function CheckoutContainer() {
                 className="Complemento"
                 type="text"
                 placeholder="Complemento"
-                value={dadosFormulario.complemento}
+                value={deliveryInfo.complemento}
                 onChange={handleChange}
               />
             </div>
@@ -146,7 +138,7 @@ export function CheckoutContainer() {
                 className="Bairro"
                 type="text"
                 placeholder="Bairro"
-                value={dadosFormulario.bairro}
+                value={deliveryInfo.bairro}
                 onChange={handleChange}
               />
               <input
@@ -154,10 +146,17 @@ export function CheckoutContainer() {
                 className="Cidade"
                 type="text"
                 placeholder="Cidade"
-                value={dadosFormulario.cidade}
+                value={deliveryInfo.cidade}
                 onChange={handleChange}
               />
-              <input name="uf" className="UF" type="text" placeholder="UF" />
+              <input
+                name="uf"
+                className="UF"
+                type="text"
+                placeholder="UF"
+                value={deliveryInfo.uf}
+                onChange={handleChange}
+              />
             </div>
           </div>
         </ContainerLeftForm>
@@ -175,21 +174,33 @@ export function CheckoutContainer() {
           </div>
           <div className="paymentButtons">
             <button
-              className={opcaoSelecionada === "credito" ? "selecionado" : ""}
-              onClick={() => selecionarOpcao("credito")}
+              className={
+                deliveryInfo.formaDePagamento === "cartão de crédito"
+                  ? "selecionado"
+                  : ""
+              }
+              onClick={() => selecionarOpcao("cartão de crédito")}
             >
               <img src={card} alt="" />
               <p>Cartão de crédito</p>
             </button>
             <button
-              className={opcaoSelecionada === "debito" ? "selecionado" : ""}
-              onClick={() => selecionarOpcao("debito")}
+              className={
+                deliveryInfo.formaDePagamento === "cartão de débito"
+                  ? "selecionado"
+                  : ""
+              }
+              onClick={() => selecionarOpcao("cartão de débito")}
             >
               <img src={bank} alt="" />
               <p>cartão de débito</p>
             </button>
             <button
-              className={opcaoSelecionada === "dinheiro" ? "selecionado" : ""}
+              className={
+                deliveryInfo.formaDePagamento === "dinheiro"
+                  ? "selecionado"
+                  : ""
+              }
               onClick={() => selecionarOpcao("dinheiro")}
             >
               <img src={money} alt="" />
@@ -262,11 +273,11 @@ export function CheckoutContainer() {
             </div>
             <div>
               <p>Entrega</p>
-              <p>R$ 3,50</p>
+              <p>R$ {deliveryInfo.taxaDeEntrega}</p>
             </div>
             <div className="totalPrice">
               <p>Total</p>
-              <p>R$ {totalPrice + 3.5}</p>
+              <p>R$ {totalPrice + deliveryInfo.taxaDeEntrega}</p>
             </div>
           </div>
           <button className="confirmPurchase">

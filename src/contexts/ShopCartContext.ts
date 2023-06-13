@@ -29,7 +29,8 @@ export interface DeliveryInfo {
   cidade: string;
   uf: string;
   valorDaCompra: number;
-  FormaDePagamento: string;
+  formaDePagamento: string;
+  taxaDeEntrega: number;
 }
 
 interface DeliveryInfoContextType {
@@ -52,7 +53,8 @@ export const DeliveryInfoContext = createContext<DeliveryInfoContextType>({
     cidade: "",
     uf: "",
     valorDaCompra: 0,
-    FormaDePagamento: "",
+    formaDePagamento: "",
+    taxaDeEntrega: 3.50,
   },
   setDeliveryInfo: () => {},
 });

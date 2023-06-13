@@ -152,7 +152,8 @@ export function App() {
     cidade: "",
     uf: "",
     valorDaCompra: 0,
-    FormaDePagamento: "",
+    formaDePagamento: "",
+    taxaDeEntrega: 3.50,
   });
 
   return (
