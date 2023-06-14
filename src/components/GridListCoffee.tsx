@@ -23,6 +23,7 @@ import {
   TextPriceBuyTest,
   ActionsBuyTest,
 } from "./CoffeeList.styles";
+import { NavLink } from "react-router-dom";
 
 export interface PropsCoffee {
   id: string;
@@ -246,9 +247,11 @@ export function GridListCoffee() {
                   <img src={iconeMais} alt="" />
                 </button>
               </CounterBuy>
-              <IconButtonBuy onClick={() => handleClick(props.id)}>
-                <img src={Vector} alt="" />
-              </IconButtonBuy>
+              <NavLink to="/checkout">
+                <IconButtonBuy onClick={() => handleClick(props.id)}>
+                  <img src={Vector} alt="" />
+                </IconButtonBuy>
+              </NavLink>
             </ActionsBuyTest>
           </BuyTest>
         </CoffeeIten>
